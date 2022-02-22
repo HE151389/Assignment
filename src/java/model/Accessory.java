@@ -1,10 +1,11 @@
 package model;
 
 public class Accessory {
+
     private String accessoryID;
     private String accessoryName;
-    private String accessoryQuantity;
-    private String accessoryPrice;
+    private int accessoryQuantity;
+    private double accessoryPrice;
     private String accessoryColor;
     private String accessoryNote;
     private String accessoryTypeID;
@@ -12,7 +13,7 @@ public class Accessory {
     public Accessory() {
     }
 
-    public Accessory(String accessoryID, String accessoryName, String accessoryQuantity, String accessoryPrice, String accessoryColor, String accessoryNote, String accessoryTypeID) {
+    public Accessory(String accessoryID, String accessoryName, int accessoryQuantity, double accessoryPrice, String accessoryColor, String accessoryNote, String accessoryTypeID) {
         this.accessoryID = accessoryID;
         this.accessoryName = accessoryName;
         this.accessoryQuantity = accessoryQuantity;
@@ -38,20 +39,24 @@ public class Accessory {
         this.accessoryName = accessoryName;
     }
 
-    public String getAccessoryQuantity() {
+    public int getAccessoryQuantity() {
         return accessoryQuantity;
     }
 
-    public void setAccessoryQuantity(String accessoryQuantity) {
-        this.accessoryQuantity = accessoryQuantity;
+    public void setAccessoryQuantity(int accessoryQuantity) {
+        if (accessoryQuantity >= 0) {
+            this.accessoryQuantity = accessoryQuantity;
+        }
     }
 
-    public String getAccessoryPrice() {
+    public double getAccessoryPrice() {
         return accessoryPrice;
     }
 
-    public void setAccessoryPrice(String accessoryPrice) {
-        this.accessoryPrice = accessoryPrice;
+    public void setAccessoryPrice(double accessoryPrice) {
+        if (accessoryPrice >= 0) {
+            this.accessoryPrice = accessoryPrice;
+        }
     }
 
     public String getAccessoryColor() {
@@ -77,5 +82,5 @@ public class Accessory {
     public void setAccessoryTypeID(String accessoryTypeID) {
         this.accessoryTypeID = accessoryTypeID;
     }
-    
+
 }

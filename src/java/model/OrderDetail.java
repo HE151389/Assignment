@@ -4,12 +4,12 @@ public class OrderDetail {
     private String orderDetailID;
     private Customer orderCustomer;
     private Accessory orderAccessory;
-    private String orderAccessoryQuantity;
+    private int orderAccessoryQuantity;
 
     public OrderDetail() {
     }
 
-    public OrderDetail(String orderDetailID, Customer orderCustomer, Accessory orderAccessory, String orderAccessoryQuantity) {
+    public OrderDetail(String orderDetailID, Customer orderCustomer, Accessory orderAccessory, int orderAccessoryQuantity) {
         this.orderDetailID = orderDetailID;
         this.orderCustomer = orderCustomer;
         this.orderAccessory = orderAccessory;
@@ -40,12 +40,15 @@ public class OrderDetail {
         this.orderAccessory = orderAccessory;
     }
 
-    public String getOrderAccessoryQuantity() {
+    public int getOrderAccessoryQuantity() {
         return orderAccessoryQuantity;
     }
 
-    public void setOrderAccessoryQuantity(String orderAccessoryQuantity) {
-        this.orderAccessoryQuantity = orderAccessoryQuantity;
+    public void setOrderAccessoryQuantity(int orderAccessoryQuantity) {
+        if(orderAccessoryQuantity >= 0){
+            this.orderAccessoryQuantity = orderAccessoryQuantity;
+        }
+        
     }
     
 }
