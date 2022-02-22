@@ -1,30 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
-/**
- *
- * @author nam25
- */
 public class Admin {
     private String adminID;
     private String adminName;
     private String adminPhone;
     private String adminEmail;
-    private String accountID;
+    private Account adminAccount;
 
     public Admin() {
     }
 
-    public Admin(String adminID, String adminName, String adminPhone, String adminEmail, String accountID) {
+    public Admin(String adminID, String adminName, String adminPhone, String adminEmail, Account adminAccount) {
         this.adminID = adminID;
         this.adminName = adminName;
         this.adminPhone = adminPhone;
         this.adminEmail = adminEmail;
-        this.accountID = accountID;
+        this.adminAccount = adminAccount;
     }
 
     public String getAdminID() {
@@ -59,12 +50,12 @@ public class Admin {
         this.adminEmail = adminEmail;
     }
 
-    public String getAccountID() {
-        return accountID;
+    public Account getAdminAccount() {
+        return adminAccount;
     }
 
-    public void setAccountID(String accountID) {
-        this.accountID = accountID;
+    public void setAdminAccount(Account adminAccount) {
+        this.adminAccount = adminAccount;
     }
 
 }
