@@ -48,7 +48,7 @@ showSlide()
 
 let products = [
     {
-        name: 'JBL E55BT KEY BLACK',
+        name: 'Kcorsair01',
         image1: './images/JBL_E55BT_KEY_BLACK_6175_FS_x1-1605x1605px.png',
         image2: './images/JBL_LIVE650BTNC_Product Image_Folded_Black.webp',
         old_price: '400',
@@ -98,7 +98,7 @@ let products = [
     },
 ]
 
-let product_list = document.querySelector('#latest-products')
+let product_list = document.querySelector('#discount-products')
 let best_product_list = document.querySelector('#best-products')
 
 products.forEach(e => {
