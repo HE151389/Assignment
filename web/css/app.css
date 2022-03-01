@@ -10,7 +10,7 @@ body {
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
     position: relative;
-    background-color: #fff;
+    background-color: #777777;
     overflow-x: hidden;
 }
 
@@ -40,11 +40,11 @@ img {
 }
 
 .bg-second {
-    background-color: #f5f5f5;
+    background-color: #c4c4c4;
 }
 
 .bg-main {
-    background-color: #fff;
+    background-color: #c4c4c4;
 }
 
 .text-red {
@@ -67,13 +67,13 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
-    background-color: #fff;
+    height: 100px;
+    background-color: #c4c4c4;
 }
 
 .logo {
-    font-size: 40px;
-    font-weight: 700;
+    max-height: 60px;
+    border-radius: 50px;
 }
 
 .mb-logo {
@@ -152,7 +152,7 @@ img {
     visibility: hidden;
     position: absolute;
     left: 0;
-    background-color: #fff;
+    background-color: #f5f5f5;
     width: 100%;
     top: calc(100% + 100px);
     z-index: 2;
@@ -179,7 +179,7 @@ img {
 .mega-content ul > li > a {
     font-weight: normal;
     padding: 10px 0;
-    border-bottom: 2px dashed #f5f5f5;
+    border-bottom: 2px dashed #fff;
     transition: padding-left 0.2s ease-in-out;
     margin: 0 20px;
     text-transform: capitalize;
@@ -203,7 +203,7 @@ img {
     padding: 20px;
 }
 
-.hero {
+/* .hero {
     height: calc(
         100vh -
             (
@@ -256,13 +256,13 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+}*/
 
 .btn-flat {
     display: inline-block;
     border: 2px solid #000;
     background-color: #000;
-    color: #fff;
+    color: #f5f5f5;
     padding: 15px 35px;
     font-size: 15px;
     outline: 0;
@@ -275,10 +275,10 @@ img {
 }
 
 .btn-hover:hover {
-    background-color: #fff;
+    background-color: #f5f5f5;
     color: #000;
 }
-
+/*
 .slide-controll {
     position: absolute;
     top: 50%;
@@ -295,7 +295,7 @@ img {
 
 .slide-controll:hover {
     background-color: #000;
-    color: #fff;
+    color: #f5f5f5;
 }
 
 .slide-next {
@@ -315,7 +315,7 @@ img {
 }
 
 /* slide animation */
-.top-down {
+/* .top-down {
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -352,10 +352,10 @@ img {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
-}
+} */
 /* end slide animation */
 
-.trans-delay-0-2 {
+/* .trans-delay-0-2 {
     transition-delay: 0.2s;
 }
 .trans-delay-0-4 {
@@ -368,25 +368,27 @@ img {
 
 .trans-delay-0-8 {
     transition-delay: 0.8s;
-}
+}  */
 
 .promotion {
-    padding: 15px;
+    margin: 0px 100px;
+    padding: 20px 15px;
+    background-color: #f5f5f5;
 }
 
 .promotion [class*="col-"] {
-    padding: 15px;
+    padding: 10px 15px;
 }
 
 .promotion-box {
     display: flex;
-    background-color: #e3e3e3;
+    background-color: #fff;
     position: relative;
 }
 
 .promotion-box .text {
     flex-grow: 1;
-    padding: 20px;
+    padding: 15px;
 }
 
 .promotion-box .text h3 {
@@ -398,8 +400,8 @@ img {
 }
 
 .promotion-box img {
-    width: 150px;
-    transition: transform 0.3s ease-in-out;
+    width: 330px;
+    transition: transform 0.5s ease-in-out;
 }
 
 .promotion-box:hover img {
@@ -407,13 +409,15 @@ img {
 }
 
 .section {
-    padding: 60px 0;
+    margin: 0px 100px;
+    padding: 30px 0;
+    background-color: #f5f5f5;
 }
 
 .section-header,
 .section-footer {
     text-align: center;
-    margin: 80px 0 70px;
+    margin: 50px 0 60px;
     text-transform: uppercase;
 }
 
@@ -422,12 +426,12 @@ img {
 }
 
 .product-card {
-    background-color: #fff;
+    background-color: #f5f5f5;
     transition: all 0.3s ease-in-out;
 }
 
 .product-card:hover {
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 
 .product-card-img {
@@ -440,6 +444,7 @@ img {
 
 .product-card-img img {
     max-height: 100%;
+    width: 320px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -456,9 +461,9 @@ img {
 }
 
 .product-card-info {
-    padding: 20px;
     text-align: center;
     position: relative;
+    background: #fff;
 }
 
 .product-card-name {
@@ -598,7 +603,7 @@ footer ul li {
     outline: 0;
     border: 0;
     background-color: #c0392b;
-    color: #fff;
+    color: #f5f5f5;
     padding: 10px;
     text-transform: uppercase;
 }
@@ -685,7 +690,7 @@ footer ul li {
     top: -4px;
     width: 22px;
     height: 22px;
-    background-color: #fff;
+    background-color: #f5f5f5;
     border: 2px solid #7b7979;
 }
 
@@ -725,7 +730,7 @@ footer ul li {
 
 .pagination > li > a.active {
     background-color: #000;
-    color: #fff;
+    color: #f5f5f5;
 }
 
 .pagination > li > a:hover {
@@ -756,7 +761,7 @@ footer ul li {
 }
 
 .product-img-item:hover {
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 
 .product-row {
@@ -805,7 +810,7 @@ footer ul li {
 
 .product-quantity-btn i {
     font-size: 20px;
-    color: #fff;
+    color: #f5f5f5;
 }
 
 .box-header {
@@ -892,17 +897,13 @@ footer ul li {
         position: fixed;
         top: 0;
         right: 100%;
-        background-color: #fff;
+        background-color: #f5f5f5;
         z-index: 99;
         transition: right 0.3s ease-in-out;
     }
 
     .header-wrapper.active {
         right: 0;
-    }
-
-    .logo {
-        font-size: 30px;
     }
 
     .mb-menu-close {
@@ -969,7 +970,7 @@ footer ul li {
         padding: 5px 0;
     }
 
-    .hero {
+    /* .hero {
         height: calc(
             80vh -
                 (
@@ -978,13 +979,13 @@ footer ul li {
                 )
         );
         margin-bottom: 60px;
-    }
-
+    } */
+/* 
     .slide {
         flex-direction: column-reverse;
-    }
+    } */
 
-    .slide > .info,
+    /* .slide > .info,
     .slide > .img {
         width: 100%;
     }
@@ -1016,7 +1017,7 @@ footer ul li {
         bottom: -70px;
         transform: unset;
         top: unset;
-    }
+    } */
 
     .product-btn {
         opacity: 1;
@@ -1046,7 +1047,7 @@ footer ul li {
     .filter-col {
         position: fixed;
         width: 100%;
-        background-color: #fff;
+        background-color: #f5f5f5;
         z-index: 98;
         left: 100%;
         height: 80vh;
@@ -1074,6 +1075,11 @@ footer ul li {
                 )
         );
         margin-bottom: 60px;
+    }
+
+    .logo {
+        max-height: 60px;
+        border-radius: 50px;
     }
 
     .info-content h2 {
