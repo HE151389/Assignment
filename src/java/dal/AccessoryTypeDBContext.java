@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dal;
 
-/**
- *
- * @author nam25
- */
-public class AccessoryTypeDBContext {
-    
+import java.util.ArrayList;
+import model.AccessoryType;
+
+public class AccessoryTypeDBContext extends DBContext {
+    ArrayList<AccessoryType> getAccessoryTypes(){
+        ArrayList<AccessoryType> listaAccessoryTypes = new ArrayList<>();
+        String sql = "";
+        return listaAccessoryTypes;
+    }
 }
