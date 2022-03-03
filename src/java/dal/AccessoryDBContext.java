@@ -14,8 +14,10 @@ public class AccessoryDBContext extends DBContext {
     public ArrayList<Accessory> getAccessories() {
         ArrayList<Accessory> listAccessories = new ArrayList<>();
         try {
-            String sql = "SELECT [accessoryID],[accessoryName],Accessory.[accessoryTypeID],AccessoryTypeName,[accessoryQuantity],[accessoryPrice],[accessoryForm],[accessoryFrom]\n"
-                    + "FROM [Accessory] INNER JOIN Accessory_Type ON Accessory.accessoryTypeID = Accessory_Type.accessoryTypeID";
+            String sql = "SELECT [accessoryID],[accessoryName],Accessory.[accessoryTypeID],"
+                    + "AccessoryTypeName,urlImg1,urlImg2,[accessoryQuantity],[accessoryPrice],"
+                    + "[accessoryForm],[accessoryFrom] FROM [Accessory] INNER JOIN Accessory_Type"
+                    + "ON Accessory.accessoryTypeID = Accessory_Type.accessoryTypeID";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
@@ -26,6 +28,8 @@ public class AccessoryDBContext extends DBContext {
                 accessory.setAccessoryPrice(rs.getDouble("accessoryPrice"));
                 accessory.setAccessoryForm(rs.getString("accessoryForm"));
                 accessory.setAccessoryFrom(rs.getString("accessoryFrom"));
+                accessory.setUrlImg1(rs.getString("urlImg1"));
+                accessory.setUrlImg2(rs.getString("urlImg2"));
                 AccessoryType accessoryType = new AccessoryType();
                 accessoryType.setAccessoryTypeID(rs.getString("accessoryTypeID"));
                 accessoryType.setAccessoryTypeName(rs.getString("accessoryTypeName"));
