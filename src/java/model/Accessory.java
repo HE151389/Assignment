@@ -9,12 +9,12 @@ public class Accessory {
     private String accessoryColor;
     private String accessoryForm;
     private String accessoryFrom;
-    private String accessoryTypeID;
+    private AccessoryType accessoryType;
 
     public Accessory() {
     }
 
-    public Accessory(String accessoryID, String accessoryName, int accessoryQuantity, double accessoryPrice, String accessoryColor, String accessoryForm, String accessoryFrom, String accessoryTypeID) {
+    public Accessory(String accessoryID, String accessoryName, int accessoryQuantity, double accessoryPrice, String accessoryColor, String accessoryForm, String accessoryFrom, AccessoryType accessoryType) {
         this.accessoryID = accessoryID;
         this.accessoryName = accessoryName;
         this.accessoryQuantity = accessoryQuantity;
@@ -22,9 +22,9 @@ public class Accessory {
         this.accessoryColor = accessoryColor;
         this.accessoryForm = accessoryForm;
         this.accessoryFrom = accessoryFrom;
-        this.accessoryTypeID = accessoryTypeID;
+        this.accessoryType = accessoryType;
     }
-
+    
     public String getAccessoryID() {
         return accessoryID;
     }
@@ -85,12 +85,12 @@ public class Accessory {
         this.accessoryFrom = accessoryFrom;
     }
 
-    public String getAccessoryTypeID() {
-        return accessoryTypeID;
+    public AccessoryType getAccessoryType() {
+        return accessoryType;
     }
 
-    public void setAccessoryTypeID(String accessoryTypeID) {
-        this.accessoryTypeID = accessoryTypeID;
+    public void setAccessoryType(AccessoryType accessoryType) {
+        this.accessoryType = accessoryType;
     }
 
 }
