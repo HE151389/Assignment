@@ -8,15 +8,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Accessory;
 import model.AccessoryType;
+import model.DiscountAccessory;
 
 public class AccessoryDBContext extends DBContext {
 
     public ArrayList<Accessory> getAccessories() {
         ArrayList<Accessory> listAccessories = new ArrayList<>();
         try {
-            String sql = "SELECT [accessoryID],[accessoryName],Accessory.[accessoryTypeID],"
-                    + "AccessoryTypeName,urlImg1,urlImg2,[accessoryQuantity],[accessoryPrice],"
-                    + "[accessoryForm],[accessoryFrom] FROM [Accessory] INNER JOIN Accessory_Type"
+            String sql = "SELECT [accessoryID],[accessoryName],Accessory.[accessoryTypeID],AccessoryTypeName,urlImg1,urlImg2,[accessoryQuantity],[accessoryPrice],[accessoryForm],[accessoryFrom]\n"
+                    + "FROM [Accessory] INNER JOIN Accessory_Type "
                     + "ON Accessory.accessoryTypeID = Accessory_Type.accessoryTypeID";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet rs = statement.executeQuery();
@@ -117,5 +117,50 @@ public class AccessoryDBContext extends DBContext {
         } catch (SQLException ex) {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public ArrayList<Accessory> getDiscountAccessories() {
+        ArrayList<Accessory> listAccessories = new ArrayList<>();
+        try {
+            String sql = "SELECT k.accessoryID, k.accessoryName, k.accessoryTypeID,k.AccessoryTypeName,k.urlImg1,k.urlImg2,k.accessoryQuantity,k.accessoryForm,k.accessoryFrom,oldPrice,currentPrice \n"
+                    + "FROM Discount_Accessory LEFT JOIN \n"
+                    + "(SELECT [accessoryID],[accessoryName],Accessory.[accessoryTypeID],AccessoryTypeName,urlImg1,urlImg2,[accessoryQuantity],[accessoryPrice],[accessoryForm],[accessoryFrom]\n"
+                    + "FROM [Accessory] INNER JOIN Accessory_Type "
+                    + "ON Accessory.accessoryTypeID = Accessory_Type.accessoryTypeID) K\n"
+                    + "ON Discount_Accessory.accessoryID = K.accessoryID";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Accessory accessory = new Accessory();
+                accessory.setAccessoryID(rs.getString("accessoryID"));
+                accessory.setAccessoryName(rs.getString("accessoryName"));
+                accessory.setAccessoryQuantity(rs.getInt("accessoryQuantity"));
+                accessory.setAccessoryForm(rs.getString("accessoryForm"));
+                accessory.setAccessoryFrom(rs.getString("accessoryFrom"));
+                accessory.setUrlImg1(rs.getString("urlImg1"));
+                accessory.setUrlImg2(rs.getString("urlImg2"));
+                AccessoryType accessoryType = new AccessoryType();
+                accessoryType.setAccessoryTypeID(rs.getString("accessoryTypeID"));
+                accessoryType.setAccessoryTypeName(rs.getString("accessoryTypeName"));
+                accessory.setAccessoryType(accessoryType);
+                DiscountAccessory da = new DiscountAccessory();
+                da.setOldPrice(rs.getDouble("oldPrice"));
+                da.setCurrentPrice(rs.getDouble("currentPrice"));
+                da.setAccessoryPrice(rs.getDouble("currentPrice"));
+                listAccessories.add(accessory);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccessoryDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listAccessories;
+    }
+
+    public static void main(String[] args) {
+        dal.AccessoryDBContext dabd = new AccessoryDBContext();
+        ArrayList<Accessory> lDAs = dabd.getDiscountAccessories();
+        for (Accessory a : lDAs) {
+            System.out.println(a.getAccessoryName());
+        }
+
     }
 }

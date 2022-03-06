@@ -1,16 +1,13 @@
 package controler;
 
-import dal.AccessoryDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Accessory;
 
-public class HomeServlet extends HttpServlet {
+public class SignupServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -20,10 +17,10 @@ public class HomeServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HomeServlet</title>");            
+            out.println("<title>Servlet SignupServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet HomeServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SignupServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -32,12 +29,7 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        dal.AccessoryDBContext adbc = new AccessoryDBContext();
-        ArrayList<Accessory> listAccessories = adbc.getAccessories();
-        ArrayList<Accessory> listDiscountAccessories = adbc.getDiscountAccessories();
-        request.setAttribute("lAs", listAccessories);
-//        request.setAttribute("lDAs", listDiscountAccessories);
-        request.getRequestDispatcher("view/Home.jsp").forward(request, response);
+        request.getRequestDispatcher("view/Signup.jsp").forward(request, response);
     }
 
     @Override

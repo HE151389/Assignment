@@ -1,4 +1,5 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +26,7 @@
         <header>
             <!-- mobile menu -->
             <div class="mobile-menu bg-second">
-                <img href="#" class="logo" src="../images/LOGO.jpg" alt="">
+                <img href="#" class="logo" src="images/LOGO.jpg" alt="">
                 <span class="mb-menu-toggle" id="mb-menu-toggle">
                     <i class='bx bx-menu'></i>
                 </span>
@@ -39,7 +40,7 @@
                 <!-- mid header -->
                 <div class="bg-main">
                     <div class="mid-header container">
-                        <img href="#" class="logo" src="../images/LOGO.jpg" alt="">
+                        <img href="#" class="logo" src="images/LOGO.jpg" alt="">
                         <div class="middle-header">
                             <div class="search">
                                 <input type="text" placeholder="Search">
@@ -136,7 +137,7 @@
 
                         <ul class="user-menu">
                             <li><a href="#"><i class='bx bx-bell'></i></a></li>
-                            <li><a href="#"><i class='bx bx-user-circle'></i></a></li>
+                            <li><a href="login"><i class='bx bx-user-circle'></i></a></li>
                             <li><a href="#"><i class='bx bx-cart'></i></a></li>
                         </ul>
                     </div>
@@ -155,13 +156,13 @@
                 <div class="section-header">
                     <h2>Discount Product</h2>
                 </div>
-                <c:forEach items="${requestScope.lAs}" var="c">
-                    <div class="row" id="discount-products">
+                <div class="row" id="discount-products">
+                    <c:forEach items="${requestScope.lDAs}" var="dA">
                         <div class="col-3 col-md-6 col-sm-12">
                             <div class="product-card">
                                 <div class="product-card-img">
-                                    <img src="${c.urlImg1}" alt="">
-                                    <img src="../images/KRazer01(2).jpg" alt="">
+                                    <img src="${dA.urlImg1}" alt="">
+                                    <img src="${dA.urlImg2}" alt="">
                                 </div>
                                 <div class="product-card-info">
                                     <div class="product-btn">
@@ -173,23 +174,21 @@
                                             <i class='bx bxs-heart'></i>
                                         </button>
                                     </div>
-                                    <div class="
-                                         product-card-name">
-                                        KRazer01
+                                    <div class="product-card-name">
+                                        ${dA.accessoryName}
                                     </div>
                                     <div class="product-card-price">
-                                        <span><del>$50</del></span>
+                                        <span><del></del></span>
                                         <span class="curr-price">$40</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="section-footer">
-                        <a href="./products.html" class="btn-flat btn-hover">view all</a>
-                    </div>
-                </c:forEach>
-
+                    </c:forEach>
+                </div>
+                <div class="section-footer">
+                    <a href="./products.html" class="btn-flat btn-hover">view all</a>
+                </div>
             </div>
         </div>
         <!-- end product list -->
@@ -200,34 +199,39 @@
                 <div class="section-header">
                     <h2>List Product</h2>
                 </div>
+
                 <div class="row" id="list-products">
-                    <div class="col-3 col-md-6 col-sm-12">
-                        <div class="product-card">
-                            <div class="product-card-img">
-                                <img src="../images/MLogitech02.jpg" alt="">
-                                <img src="../images/MLogitech02.jpg" alt="">
-                            </div>
-                            <div class="product-card-info">
-                                <div class="product-btn">
-                                    <button class="btn-flat btn-hover btn-shop-now">shop now</button>
-                                    <button class="btn-flat btn-hover btn-cart-add">
-                                        <i class='bx bxs-cart-add'></i>
-                                    </button>
-                                    <button class="btn-flat btn-hover btn-cart-add">
-                                        <i class='bx bxs-heart'></i>
-                                    </button>
+                    <c:forEach items="${requestScope.lAs}" var="a" >
+                        <div class="col-3 col-md-6 col-sm-12">
+                            <div class="product-card">
+                                <div class="product-card-img">
+                                    <img src="" alt="">
+                                    <img src="" alt="">
                                 </div>
-                                <div class="product-card-name">
-                                    JBL Quantum 400
-                                </div>
-                                <div class="product-card-price">
-                                    <span><del>$300</del></span>
-                                    <span class="curr-price">$200</span>
+                                <div class="product-card-info">
+                                    <div class="product-btn">
+                                        <button class="btn-flat btn-hover btn-shop-now">shop now</button>
+                                        <button class="btn-flat btn-hover btn-cart-add">
+                                            <i class='bx bxs-cart-add'></i>
+                                        </button>
+                                        <button class="btn-flat btn-hover btn-cart-add">
+                                            <i class='bx bxs-heart'></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-card-name">
+                                        ${a.accessoryName}
+                                    </div>
+                                    <div class="product-card-price">
+                                        <!--                                        <span><del></del></span>-->
+                                        <span class="curr-price">${a.accessoryPrice}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
                 </div>
+
+
                 <div class="section-footer">
                     <a href="./products.html" class="btn-flat btn-hover">view all</a>
                 </div>
@@ -287,7 +291,7 @@
 
         <!-- app js -->
         <script src="js/app.js"></script>
-        <script src="js/index.js"></script>
+        <!--        <script src="js/index.js"></script>-->
     </body>
 
 </html>

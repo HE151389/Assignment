@@ -6,7 +6,6 @@ public class Accessory {
     private String accessoryName;
     private int accessoryQuantity;
     private double accessoryPrice;
-    private String accessoryColor;
     private String accessoryForm;
     private String accessoryFrom;
     private String urlImg1;
@@ -16,12 +15,11 @@ public class Accessory {
     public Accessory() {
     }
 
-    public Accessory(String accessoryID, String accessoryName, int accessoryQuantity, double accessoryPrice, String accessoryColor, String accessoryForm, String accessoryFrom, String urlImg1, String urlImg2, AccessoryType accessoryType) {
+    public Accessory(String accessoryID, String accessoryName, int accessoryQuantity, double accessoryPrice, String accessoryForm, String accessoryFrom, String urlImg1, String urlImg2, AccessoryType accessoryType) {
         this.accessoryID = accessoryID;
         this.accessoryName = accessoryName;
         this.accessoryQuantity = accessoryQuantity;
         this.accessoryPrice = accessoryPrice;
-        this.accessoryColor = accessoryColor;
         this.accessoryForm = accessoryForm;
         this.accessoryFrom = accessoryFrom;
         this.urlImg1 = urlImg1;
@@ -63,14 +61,6 @@ public class Accessory {
         if (accessoryPrice >= 0) {
             this.accessoryPrice = accessoryPrice;
         }
-    }
-
-    public String getAccessoryColor() {
-        return accessoryColor;
-    }
-
-    public void setAccessoryColor(String accessoryColor) {
-        this.accessoryColor = accessoryColor;
     }
 
     public String getAccessoryForm() {
