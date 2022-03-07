@@ -3,13 +3,13 @@ package model;
 public class OrderDetail {
     private String orderDetailID;
     private Customer orderCustomer;
-    private Accessory orderAccessory;
+    private Product orderAccessory;
     private int orderAccessoryQuantity;
 
     public OrderDetail() {
     }
 
-    public OrderDetail(String orderDetailID, Customer orderCustomer, Accessory orderAccessory, int orderAccessoryQuantity) {
+    public OrderDetail(String orderDetailID, Customer orderCustomer, Product orderAccessory, int orderAccessoryQuantity) {
         this.orderDetailID = orderDetailID;
         this.orderCustomer = orderCustomer;
         this.orderAccessory = orderAccessory;
@@ -32,11 +32,11 @@ public class OrderDetail {
         this.orderCustomer = orderCustomer;
     }
 
-    public Accessory getOrderAccessory() {
+    public Product getOrderAccessory() {
         return orderAccessory;
     }
 
-    public void setOrderAccessory(Accessory orderAccessory) {
+    public void setOrderAccessory(Product orderAccessory) {
         this.orderAccessory = orderAccessory;
     }
 

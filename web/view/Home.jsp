@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ATShop</title>
+        <title>KJ COMPUTER ACCESSORY</title>
         <!-- google font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link
@@ -40,7 +40,7 @@
                 <!-- mid header -->
                 <div class="bg-main">
                     <div class="mid-header container">
-                        <img href="#" class="logo" src="images/LOGO.jpg" alt="">
+                        <img href="home" class="logo" src="images\LOGO.jpg" alt="">
                         <div class="middle-header">
                             <div class="search">
                                 <input type="text" placeholder="Search">
@@ -49,81 +49,26 @@
                             <div class="bg-second">
                                 <div class="bottom-header container">
                                     <ul class="main-menu">
-                                        <li><a href="#">home</a></li>
+                                        <li><a href="home">home</a></li>
                                         <!-- mega menu -->
                                         <li class="mega-dropdown">
                                             <a href="./products.html">Shop<i class='bx bxs-chevron-down'></i></a>
                                             <div class="mega-content">
                                                 <div class="row">
+                                                    <c:forEach items="${requestScope.listCategorys}" var="c">
                                                     <div class="col-3 col-md-12">
                                                         <div class="box">
-                                                            <h3>Mouse</h3>
+                                                            <h3><a ${tag == c.categoryID ? "active" : ""} href="category?categoryID=${c.categoryID}">${c.name}</a></h3>
+                                                            
                                                             <ul>
-                                                                <li><a href="#">Corsair</a></li>
+<!--                                                            <li><a href="#">Corsair</a></li>
                                                                 <li><a href="#">Fuhlen</a></li>
                                                                 <li><a href="#">Logitech</a></li>
-                                                                <li><a href="#">Razer</a></li>
+                                                                <li><a href="#">Razer</a></li>-->
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <div class="col-3 col-md-12">
-                                                        <div class="box">
-                                                            <h3>Keyboard</h3>
-                                                            <ul>
-                                                                <li><a href="#">Corsair</a></li>
-                                                                <li><a href="#">Fuhlen</a></li>
-                                                                <li><a href="#">Logitech</a></li>
-                                                                <li><a href="#">Razer</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-3 col-md-12">
-                                                        <div class="box">
-                                                            <h3>Headphone</h3>
-                                                            <ul>
-                                                                <li><a href="#">Asus</a></li>
-                                                                <li><a href="#">Corsair</a></li>
-                                                                <li><a href="#">Logitech</a></li>
-                                                                <li><a href="#">Logitech</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-3 col-md-12">
-                                                        <div class="box">
-                                                            <h3>Chair</h3>
-                                                            <ul>
-                                                                <li><a href="#">Akracing</a></li>
-                                                                <li><a href="#">Corsair</a></li>
-                                                                <li><a href="#">Logitech</a></li>
-                                                                <li><a href="#">MSI</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row img-row">
-                                                    <div class="col-3">
-                                                        <div class="box">
-                                                            <img src="./images/kisspng-beats-electronics-headphones-apple-beats-studio-red-headphones.png"
-                                                                 alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div class="box">
-                                                            <img src="./images/JBL_TUNE220TWS_ProductImage_Pink_ChargingCaseOpen.png"
-                                                                 alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div class="box">
-                                                            <img src="./images/JBL_JR 310BT_Product Image_Hero_Skyblue.png"
-                                                                 alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div class="box">
-                                                            <img src="./images/JBLHorizon_001_dvHAMaster.png" alt="">
-                                                        </div>
-                                                    </div>
+                                                    </c:forEach>
                                                 </div>
                                             </div>
                                         </li>
@@ -154,15 +99,15 @@
         <div class="section">
             <div class="discountProduct">
                 <div class="section-header">
-                    <h2>Discount Product</h2>
+                    <h2>List Product</h2>
                 </div>
                 <div class="row" id="discount-products">
-                    <c:forEach items="${requestScope.lDAs}" var="dA">
+                    <c:forEach items="${requestScope.listProducts}" var="p">
                         <div class="col-3 col-md-6 col-sm-12">
                             <div class="product-card">
                                 <div class="product-card-img">
-                                    <img src="${dA.urlImg1}" alt="">
-                                    <img src="${dA.urlImg2}" alt="">
+                                    <img src="${p.urlImg1}" alt="">
+                                    <img src="${p.urlImg2}" alt="">
                                 </div>
                                 <div class="product-card-info">
                                     <div class="product-btn">
@@ -175,7 +120,7 @@
                                         </button>
                                     </div>
                                     <div class="product-card-name">
-                                        ${dA.accessoryName}
+                                        ${p.name}
                                     </div>
                                     <div class="product-card-price">
                                         <span><del></del></span>
@@ -186,14 +131,12 @@
                         </div>
                     </c:forEach>
                 </div>
-                <div class="section-footer">
-                    <a href="./products.html" class="btn-flat btn-hover">view all</a>
-                </div>
+                
             </div>
         </div>
         <!-- end product list -->
 
-        <!-- product list -->
+<!--         product list 
         <div class="section">
             <div class="listProduct">
                 <div class="section-header">
@@ -201,11 +144,11 @@
                 </div>
 
                 <div class="row" id="list-products">
-                    <c:forEach items="${requestScope.lAs}" var="a" >
+                    
                         <div class="col-3 col-md-6 col-sm-12">
                             <div class="product-card">
                                 <div class="product-card-img">
-                                    <img src="" alt="">
+                                    <img src="1}" alt="">
                                     <img src="" alt="">
                                 </div>
                                 <div class="product-card-info">
@@ -219,16 +162,16 @@
                                         </button>
                                     </div>
                                     <div class="product-card-name">
-                                        ${a.accessoryName}
+                                        
                                     </div>
                                     <div class="product-card-price">
-                                        <!--                                        <span><del></del></span>-->
+                                                                                <span><del></del></span>
                                         <span class="curr-price">${a.accessoryPrice}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </c:forEach>
+                    
                 </div>
 
 
@@ -237,7 +180,7 @@
                 </div>
             </div>
         </div>
-        <!-- end product list -->
+         end product list -->
 
         <!-- footer -->
         <footer class="bg-second">
@@ -263,9 +206,7 @@
                     </div>
                     <div class="col-2 col-md-2 col-sm-12">
                         <div class="contact">
-                            <h3 class="contact-header">
-                                LOGO
-                            </h3>
+                            <img href="#" class="logo" src="images\LOGO.jpg" alt="">
                             <ul class="contact-socials">
                                 <li><a href="#">
                                         <i class='bx bxl-facebook-circle'></i>

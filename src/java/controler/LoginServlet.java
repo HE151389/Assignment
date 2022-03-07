@@ -3,7 +3,6 @@ package controler;
 import dal.AccountDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -59,7 +58,6 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("home");
         } else {
             request.getRequestDispatcher("view/Login.jsp").forward(request, response);
-
         }
         
     }
