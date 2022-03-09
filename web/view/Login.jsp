@@ -5,7 +5,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Animated Login Form</title>
+        <title>Login</title>
         <link rel="stylesheet" href="css/login.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
@@ -14,6 +14,7 @@
             <div class="container">
                 <header>Login Form</header>
                 <form action="login" method="post">
+                    <p class="text-red">${requestScope.mess}</p>
                     <div class="input-field">
                         <input type="text" name="user" value="${cookie.username.value}" required>
                         <label>Email or Username</label>

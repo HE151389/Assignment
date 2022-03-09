@@ -1,11 +1,16 @@
 package controler;
 
+import dal.AccountDBContext;
+import dal.CustomerDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.Customer;
 
 public class SignupServlet extends HttpServlet {
 
@@ -35,7 +40,25 @@ public class SignupServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
+        String name = request.getParameter("name");
+        Date Dob = Date.valueOf(request.getParameter("DoB"));
+        String email = request.getParameter("email");
+        String cpass = request.getParameter("confirm_password");
+        dal.AccountDBContext adbc = new AccountDBContext();
+        if(adbc.getAccountByUsername(user) == null){
+            if(pass.equals(cpass)){
+                adbc.insertAccount(new Account(user, pass));
+                dal.CustomerDBContext cdbc = new CustomerDBContext();
+                cdbc.insertCustomer(new Customer(name, Dob, email, adbc.getAccount(name, pass)));
+                response.sendRedirect("home");
+            }
+            request.setAttribute("mess", "Confirm password must equal with password!");
+        }else{
+            request.setAttribute("mess", "Username has been used!");
+        }
+        request.getRequestDispatcher("view/Signup.jsp").forward(request, response);
     }
 
     @Override

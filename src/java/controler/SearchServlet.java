@@ -24,6 +24,7 @@ public class SearchServlet extends HttpServlet {
         dal.CategoryDBContext adbc = new CategoryDBContext();
         ArrayList<Category> listCategorys = adbc.getCategorys();
         request.setAttribute("listProducts", listSearchProducts);
+        request.setAttribute("search", searchString);
         request.setAttribute("listCategorys", listCategorys);
         request.getRequestDispatcher("view/Home.jsp").forward(request, response);
     }

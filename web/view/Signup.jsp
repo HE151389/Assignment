@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Bootstrap Elegant Sign Up Form</title>
+        <title>Sign Up</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -44,7 +44,7 @@
                 font-weight: bold;
                 margin: 0 0 25px;
             }
-            .signup-form form {
+            .signup-form{
                 margin-bottom: 15px;
                 background: #fff;
                 border: 1px solid #f4f4f4;
@@ -85,8 +85,15 @@
         <div class="signup-form">
             <form action="signup" method="post">
                 <h2>Sign Up</h2>
+                <p class="text-warning">${requestScope.mess}</p>
                 <div class="form-group">
                     <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" name="DoB" placeholder="DoB" required="required">
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">

@@ -1,61 +1,70 @@
 package model;
 
+import java.sql.Date;
+
 public class Customer {
-    private String customerID;
-    private String customerName;
-    private String customerPhone;
-    private String customerEmail;
-    private Account customerAccount;
+    private String cusID;
+    private String name;
+    private Date DoB;
+    private String email;
+    private Account cusAccount;
 
     public Customer() {
     }
 
-    public Customer(String customerID, String customerName, String customerPhone, String customerEmail, Account customerAccount) {
-        this.customerID = customerID;
-        this.customerName = customerName;
-        this.customerPhone = customerPhone;
-        this.customerEmail = customerEmail;
-        this.customerAccount = customerAccount;
+    public Customer(String name, Date DoB, String email, Account cusAccount) {
+        this.name = name;
+        this.DoB = DoB;
+        this.email = email;
+        this.cusAccount = cusAccount;
     }
 
-    public String getCustomerID() {
-        return customerID;
+    public Customer(String cusID, String name, String email, Date DoB, Account cusAccount) {
+        this.cusID = cusID;
+        this.name = name;
+        this.email = email;
+        this.DoB = DoB;
+        this.cusAccount = cusAccount;
     }
 
-    public void setCustomerID(String customerID) {
-        this.customerID = customerID;
+    public String getCusID() {
+        return cusID;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public void setCusID(String cusID) {
+        this.cusID = cusID;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public String getName() {
+        return name;
     }
 
-    public String getCustomerPhone() {
-        return customerPhone;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCustomerPhone(String customerPhone) {
-        this.customerPhone = customerPhone;
+    public String getEmail() {
+        return email;
     }
 
-    public String getCustomerEmail() {
-        return customerEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setCustomerEmail(String customerEmail) {
-        this.customerEmail = customerEmail;
+    public Account getCusAccount() {
+        return cusAccount;
     }
 
-    public Account getCustomerAccount() {
-        return customerAccount;
+    public void setCusAccount(Account cusAccount) {
+        this.cusAccount = cusAccount;
     }
 
-    public void setCustomerAccount(Account customerAccount) {
-        this.customerAccount = customerAccount;
+    public Date getDoB() {
+        return DoB;
+    }
+
+    public void setDoB(Date DoB) {
+        this.DoB = DoB;
     }
     
 }

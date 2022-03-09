@@ -21,7 +21,7 @@
                 <img href="home" class="logo" src="images\LOGO.jpg" alt="">
                 <div class="middle-header">
                     <div class="search">
-                        <input name="search" id="search" type="text" placeholder="Search">
+                        <input value="${requestScope.search}" id="search" type="text" placeholder="Search">
                         <i onclick="doSearch();" class='bx bx-search-alt'></i>
                     </div>
 
