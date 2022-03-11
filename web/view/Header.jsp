@@ -4,7 +4,7 @@
 <header>
     <!-- mobile menu -->
     <div class="mobile-menu bg-second">
-        <img onclick="doBack()" class="logo" src="images/LOGO.jpg" alt="">
+        <img href="#" class="logo" src="images/LOGO.jpg" alt="">
         <span class="mb-menu-toggle" id="mb-menu-toggle">
             <i class='bx bx-menu'></i>
         </span>
@@ -45,9 +45,6 @@
                                     </div>
                                 </li>
                                 <!-- end mega menu -->
-                                <c:if test="${sessionScope.account.isAdmin}" >
-                                    <li><a href="product/manager">Manager Product</a></li>
-                                </c:if>
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">contact</a></li>
                             </ul>
@@ -57,8 +54,8 @@
 
                 <ul class="user-menu">
                     <li><a href="#"><i class='bx bx-bell'></i></a></li>
-                    <li><a href="profile?Aid=${sessionScope.account.accountID}"><i class='bx bx-user-circle'></i></a></li>
-                    <li><a href="cart"><i class='bx bx-cart'></i></a></li>
+                    <li><a href="login"><i class='bx bx-user-circle'></i></a></li>
+                    <li><a href="#"><i class='bx bx-cart'></i></a></li>
                 </ul>
             </div>
         </div>
@@ -69,7 +66,7 @@
     <script>
         function doSearch() {
             var c = document.getElementById("search").value;
-            window.location.href = "search?search=" + c;
+            window.location.href = "search?search="+c;
         }
     </script>
     <!-- end main header -->

@@ -4,22 +4,19 @@ public class Account {
     private int accountID;
     private String userName;
     private String password;
-    private boolean isAdmin;
 
     public Account() {
     }
 
-    public Account(int accountID, String userName, String password, boolean isAdmin) {
+    public Account(int accountID, String userName, String password) {
         this.accountID = accountID;
         this.userName = userName;
         this.password = password;
-        this.isAdmin = isAdmin;
     }
 
-    public Account(String userName, String password, boolean isAdmin) {
+    public Account(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        this.isAdmin = isAdmin;
     }
     
     public int getAccountID() {
@@ -45,14 +42,5 @@ public class Account {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public boolean isIsAdmin() {
-        return isAdmin;
-    }
-
-    public void setIsAdmin(boolean isAdmin) {
-        this.isAdmin = isAdmin;
-    }
-
-
+    
 }

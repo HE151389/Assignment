@@ -9,7 +9,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import model.Account;
 import model.Customer;
 
@@ -50,22 +49,16 @@ public class SignupServlet extends HttpServlet {
         dal.AccountDBContext adbc = new AccountDBContext();
         if(adbc.getAccountByUsername(user) == null){
             if(pass.equals(cpass)){
-                adbc.insertAccount(new Account(user, pass, false));
+                adbc.insertAccount(new Account(user, pass));
                 dal.CustomerDBContext cdbc = new CustomerDBContext();
-                Account account = adbc.getAccountByUsername(user);
-                cdbc.insertCustomer(new Customer(name, Dob, email, account));
-                HttpSession session = request.getSession();
-                session.setAttribute("account", account);
+                cdbc.insertCustomer(new Customer(name, Dob, email, adbc.getAccount(name, pass)));
                 response.sendRedirect("home");
-            }else{
-            request.setAttribute("mess", "Confirm password must equal with password!");
-            request.getRequestDispatcher("view/Signup.jsp").forward(request, response);
             }
+            request.setAttribute("mess", "Confirm password must equal with password!");
         }else{
             request.setAttribute("mess", "Username has been used!");
-            request.getRequestDispatcher("view/Signup.jsp").forward(request, response);
         }
-        
+        request.getRequestDispatcher("view/Signup.jsp").forward(request, response);
     }
 
     @Override
