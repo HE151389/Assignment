@@ -92,8 +92,6 @@
         <servlet-name>ProductDetailServlet</servlet-name>
         <url-pattern>/details</url-pattern>
     </servlet-mapping>
-=======
->>>>>>> parent of 2d533a2 (details + login  + signup)
     <session-config>
         <session-timeout>
             30
