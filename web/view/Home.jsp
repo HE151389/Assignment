@@ -35,15 +35,17 @@
                         <div class="col-3 col-md-6 col-sm-12">
                             <div class="product-card">
                                 <div class="product-card-img">
+                                    <a href="product/details?pid=${p.ID}">
                                     <img src="${p.urlImg1}" alt="">
                                     <img src="${p.urlImg2}" alt="">
+                                    </a>
                                 </div>
                                 <div class="product-card-info">
                                     <div class="product-btn">
-                                        <button class="btn-flat btn-hover btn-shop-now">shop now</button>
-                                        <button class="btn-flat btn-hover btn-cart-add">
+                                        <a><button class="btn-flat btn-hover btn-shop-now">shop now</button></a>
+                                        <a><button class="btn-flat btn-hover btn-cart-add">
                                             <i class='bx bxs-cart-add'></i>
-                                        </button>
+                                            </button></a>
                                         <button class="btn-flat btn-hover btn-cart-add">
                                             <i class='bx bxs-heart'></i>
                                         </button>

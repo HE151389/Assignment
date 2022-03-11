@@ -1,4 +1,4 @@
-package controler.Product;
+package controler;
 
 import dal.ProductDBContext;
 import java.io.IOException;

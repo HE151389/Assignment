@@ -30,15 +30,19 @@
     </servlet>
     <servlet>
         <servlet-name>ManagerServlet</servlet-name>
-        <servlet-class>controler.Product.ManagerServlet</servlet-class>
+        <servlet-class>controler.ManagerServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ProductDetailsServlet</servlet-name>
-        <servlet-class>controler.Product.ProductDetailsServlet</servlet-class>
+        <servlet-class>controler.ProductDetailsServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CartServlet</servlet-name>
         <servlet-class>controler.CartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductDetailServlet</servlet-name>
+        <servlet-class>controler.ProductDetailServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
@@ -70,15 +74,19 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ManagerServlet</servlet-name>
-        <url-pattern>/product/manager</url-pattern>
+        <url-pattern>manager</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProductDetailsServlet</servlet-name>
-        <url-pattern>/product/productDetails</url-pattern>
+        <url-pattern>productDetails</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductDetailServlet</servlet-name>
+        <url-pattern>/details</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

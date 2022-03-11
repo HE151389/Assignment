@@ -4,151 +4,149 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-              <div class="thumbnail">
-                <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
-                <div class="caption">
-                  <h4 class="pull-right">$700.99</h4>
-                  <h4><a href="#">Mobile Product</a></h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-                <div class="ratings">
-                  <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                     (15 reviews)
-                  </p>
-                </div>
-                <div class="space-ten"></div>
-                <div class="btn-ground text-center">
-                    <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Quick View</button>
-                </div>
-                <div class="space-ten"></div>
-              </div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/productDetail.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/app.css" rel="stylesheet" type="text/css"/>
+        <title>eCommerce Product Detail</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header>
+            <!-- mobile menu -->
+            <div class="mobile-menu bg-second">
+                <img onclick="doBack()" class="logo" src="images/LOGO.jpg" alt="">
+                <span class="mb-menu-toggle" id="mb-menu-toggle">
+                    <i class='bx bx-menu'></i>
+                </span>
             </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
-                <div class="caption">
-                  <h4 class="pull-right">$700.99</h4>
-                  <h4><a href="#">Mobile Product</a></h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-                <div class="ratings">
-                  <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                     (15 reviews)
-                  </p>
-                </div>
-                <div class="space-ten"></div>
-                <div class="btn-ground text-center">
-                    <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Quick View</button>
-                </div>
-                <div class="space-ten"></div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
-                <div class="caption">
-                  <h4 class="pull-right">$700.99</h4>
-                  <h4><a href=  "#">Mobile Product</a></h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-                <div class="ratings">
-                  <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                     (15 reviews)
-                  </p>
-                </div>
-                <div class="space-ten"></div>
-                <div class="btn-ground text-center">
-                    <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Quick View</button>
-                </div>
-                <div class="space-ten"></div>
-              </div>
-            </div>
-    </div>
-</div>
-<div class="modal fade product_view" id="product_view">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-                <h3 class="modal-title">HTML5 is a markup language</h3>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6 product_img">
-                        <img src="http://img.bbystatic.com/BestBuy_US/images/products/5613/5613060_sd.jpg" class="img-responsive">
+            <!-- end mobile menu -->
+            <!-- main header -->
+            <div class="header-wrapper" id="header-wrapper">
+                <span class="mb-menu-toggle mb-menu-close" id="mb-menu-close">
+                    <i class='bx bx-x'></i>
+                </span>
+                <!-- mid header -->
+                <div class="bg-main">
+                    <div class="mid-header container">
+                        <img href="home" class="logo" src="../images/LOGO.jpg" alt="">
+                        <div class="middle-header">
+                            <div class="search">
+                                <input value="${requestScope.search}" id="search" type="text" placeholder="Search">
+                                <i onclick="doSearch();" class='bx bx-search-alt'></i>
+                            </div>
+
+                            <div class="bg-second">
+                                <div class="bottom-header container">
+                                    <ul class="main-menu">
+                                        <li><a href="home">home</a></li>
+                                        <!-- mega menu -->
+                                        <li class="mega-dropdown">
+                                            <a>Shop<i class='bx bxs-chevron-down'></i></a>
+                                            <div class="mega-content">
+                                                <div class="row">
+                                                    <c:forEach items="${requestScope.listCategorys}" var="c">
+                                                        <div class="col-3 col-md-12">
+                                                            <div class="box">
+                                                                <h3><a href="category?categoryID=${c.categoryID}">${c.name}</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </c:forEach>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- end mega menu -->
+                                        <c:if test="${sessionScope.account.isAdmin}" >
+                                            <li><a href="product/manager">Manager Product</a></li>
+                                        </c:if>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="user-menu">
+                            <li><a href="#"><i class='bx bx-bell'></i></a></li>
+                            <li><a href="profile?Aid=${sessionScope.account.accountID}"><i class='bx bx-user-circle'></i></a></li>
+                            <li><a href="cart"><i class='bx bx-cart'></i></a></li>
+                        </ul>
                     </div>
-                    <div class="col-md-6 product_content">
-                        <h4>Product Id: <span>51526</span></h4>
-                        <div class="rating">
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            (10 reviews)
+                </div>
+                <!-- end mid header -->
+                <!-- bottom header -->
+                <!-- end bottom header -->
+            </div>
+            <script>
+                function doSearch() {
+                    var c = document.getElementById("search").value;
+                    window.location.href = "search?search=" + c;
+                }
+            </script>
+            <!-- end main header -->
+        </header>
+        <div class="container">
+            <div class="card">
+                <div class="container-fliud">
+                    <div class="wrapper row">
+                        <div class="preview col-md-6">
+
+                            <div class="preview-pic tab-content">
+                                <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
+                                <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+                                <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
+                                <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+                                <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+                            </div>
+                            <ul class="preview-thumbnail nav nav-tabs">
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                                <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                                <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                                <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                                <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                            </ul>
+
                         </div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 75.00 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small></h3>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <select class="form-control" name="select">
-                                    <option value="" selected="">Color</option>
-                                    <option value="black">Black</option>
-                                    <option value="white">White</option>
-                                    <option value="gold">Gold</option>
-                                    <option value="rose gold">Rose Gold</option>
-                                </select>
+                        <div class="details col-md-6">
+                            <h3 class="product-title">men's shoes fashion</h3>
+                            <div class="rating">
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span class="review-no">41 reviews</span>
                             </div>
-                            <!-- end col -->
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <select class="form-control" name="select">
-                                    <option value="">Capacity</option>
-                                    <option value="">16GB</option>
-                                    <option value="">32GB</option>
-                                    <option value="">64GB</option>
-                                    <option value="">128GB</option>
-                                </select>
+                            <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+                            <h4 class="price">current price: <span>$180</span></h4>
+                            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                            <h5 class="sizes">sizes:
+                                <span class="size" data-toggle="tooltip" title="small">s</span>
+                                <span class="size" data-toggle="tooltip" title="medium">m</span>
+                                <span class="size" data-toggle="tooltip" title="large">l</span>
+                                <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+                            </h5>
+                            <h5 class="colors">colors:
+                                <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                                <span class="color green"></span>
+                                <span class="color blue"></span>
+                            </h5>
+                            <div class="action">
+                                <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                                <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                             </div>
-                            <!-- end col -->
-                            <div class="col-md-4 col-sm-12">
-                                <select class="form-control" name="select">
-                                    <option value="" selected="">QTY</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                </select>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <div class="space-ten"></div>
-                        <div class="btn-ground">
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Add To Wishlist</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </body>
+</html>

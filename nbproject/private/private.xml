@@ -3,20 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/Product/ProductDetailsServlet.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/dal/CartDBContext.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/CartServlet.java</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/ManagerServlet.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/Header.jsp</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/manager.jsp</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/model/CartDetails.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/ProductDetails.jsp</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/css/productDetail.css</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/LoginServlet.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/Home.jsp</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/Product/ManagerServlet.java</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/ProductDetailServlet.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/Cart.jsp</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/css/crud.css</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/ProductDetailsServlet.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/dal/ProductDBContext.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/model/Cart.java</file>
         </group>

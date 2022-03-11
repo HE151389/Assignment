@@ -1,23 +1,24 @@
-package controler.Product;
+package controler;
 
 import dal.ProductDBContext;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Product;
 
-public class ManagerServlet extends HttpServlet {
+public class ProductDetailServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int pid = Integer.parseInt(request.getParameter("pid"));
         ProductDBContext pdbc = new ProductDBContext();
-        ArrayList<Product> listProducts = pdbc.getAllProducts();
-        request.setAttribute("listProducts", listProducts);
-        request.getRequestDispatcher("../view/manager.jsp").forward(request, response);
+        Product product = pdbc.getProduct(pid);
+        request.setAttribute("product", product);
+        request.getRequestDispatcher("").forward(request, response);
     }
 
     @Override
