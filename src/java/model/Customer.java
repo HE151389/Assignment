@@ -3,35 +3,35 @@ package model;
 import java.sql.Date;
 
 public class Customer {
-    private String cusID;
+    private int cusID;
     private String name;
-    private Date DoB;
+    private Date doB;
     private String email;
     private Account cusAccount;
 
     public Customer() {
     }
 
-    public Customer(String name, Date DoB, String email, Account cusAccount) {
+    public Customer(String name, Date doB, String email, Account cusAccount) {
         this.name = name;
-        this.DoB = DoB;
+        this.doB = doB;
         this.email = email;
         this.cusAccount = cusAccount;
     }
 
-    public Customer(String cusID, String name, String email, Date DoB, Account cusAccount) {
+    public Customer(int cusID, String name, String email, Date doB, Account cusAccount) {
         this.cusID = cusID;
         this.name = name;
         this.email = email;
-        this.DoB = DoB;
+        this.doB = doB;
         this.cusAccount = cusAccount;
     }
 
-    public String getCusID() {
+    public int getCusID() {
         return cusID;
     }
 
-    public void setCusID(String cusID) {
+    public void setCusID(int cusID) {
         this.cusID = cusID;
     }
 
@@ -60,11 +60,11 @@ public class Customer {
     }
 
     public Date getDoB() {
-        return DoB;
+        return doB;
     }
 
-    public void setDoB(Date DoB) {
-        this.DoB = DoB;
+    public void setDoB(Date doB) {
+        this.doB = doB;
     }
     
 }

@@ -10,6 +10,7 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
     <body>
+        
         <c:if test="${sessionScope.account == null}">
             <div class="container">
                 <header>Login Form</header>
@@ -22,6 +23,12 @@
                     <div class="input-field">
                         <input type="password" name="pass" value="${cookie.password.value}" required>
                         <label>Password</label>
+                    </div>
+                    <div class="input-field">
+                        <select name="roll" style="height: 40px; width: 150px; font-size: 20px" >
+                            <option style="font-size: 15px">Customer</option>
+                            <option style="font-size: 15px">Admin</option>
+                        </select>
                     </div>
                     <input type="checkbox" name="remember"/>
                     <label>Remember me</label>
@@ -45,7 +52,7 @@
             </div>
         </c:if>
         <c:if test="${sessionScope.account != null}">
-            <c:redirect url="accountInfo"></c:redirect>
+            <c:redirect url="profile"></c:redirect>
         </c:if>
     </body>
 </html>
