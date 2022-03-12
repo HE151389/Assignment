@@ -11,12 +11,19 @@ public class Product {
     private String urlImg1;
     private String urlImg2;
     private Category category;
+<<<<<<< HEAD
     private String des;
+=======
+>>>>>>> parent of 2d533a2 (details + login  + signup)
 
     public Product() {
     }
 
+<<<<<<< HEAD
     public Product(int ID, String name, int quantity, double price, String form, String from, String urlImg1, String urlImg2, Category category, String des) {
+=======
+    public Product(int ID, String name, int quantity, double price, String form, String from, String urlImg1, String urlImg2, Category category) {
+>>>>>>> parent of 2d533a2 (details + login  + signup)
         this.ID = ID;
         this.name = name;
         this.quantity = quantity;
@@ -26,9 +33,14 @@ public class Product {
         this.urlImg1 = urlImg1;
         this.urlImg2 = urlImg2;
         this.category = category;
+<<<<<<< HEAD
         this.des = des;
     }
     
+=======
+    }
+
+>>>>>>> parent of 2d533a2 (details + login  + signup)
     public int getID() {
         return ID;
     }
@@ -100,6 +112,7 @@ public class Product {
     public void setCategory(Category category) {
         this.category = category;
     }
+<<<<<<< HEAD
 
     public String getDes() {
         return des;
@@ -108,5 +121,7 @@ public class Product {
     public void setDes(String des) {
         this.des = des;
     }
+=======
+>>>>>>> parent of 2d533a2 (details + login  + signup)
     
 }

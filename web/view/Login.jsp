@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,6 +23,7 @@
                         <label>Password</label>
                     </div>
                     <input type="checkbox" name="remember"/>
+                    
                     <label>Remember me</label>
                     <div class="button">
                         <div class="inner"></div>
@@ -45,7 +45,7 @@
             </div>
         </c:if>
         <c:if test="${sessionScope.account != null}">
-            <c:redirect url="accountInfo"></c:redirect>
+            <c:redirect url="profile"></c:redirect>
         </c:if>
     </body>
 </html>
