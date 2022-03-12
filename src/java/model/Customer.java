@@ -3,7 +3,7 @@ package model;
 import java.sql.Date;
 
 public class Customer {
-    private String cusID;
+    private int cusID;
     private String name;
     private Date DoB;
     private String email;
@@ -19,11 +19,7 @@ public class Customer {
         this.cusAccount = cusAccount;
     }
 
-<<<<<<< HEAD
     public Customer(int cusID, String name, String email, Date DoB, Account cusAccount) {
-=======
-    public Customer(String cusID, String name, String email, Date DoB, Account cusAccount) {
->>>>>>> parent of 2d533a2 (details + login  + signup)
         this.cusID = cusID;
         this.name = name;
         this.email = email;
@@ -31,11 +27,11 @@ public class Customer {
         this.cusAccount = cusAccount;
     }
 
-    public String getCusID() {
+    public int getCusID() {
         return cusID;
     }
 
-    public void setCusID(String cusID) {
+    public void setCusID(int cusID) {
         this.cusID = cusID;
     }
 

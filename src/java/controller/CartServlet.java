@@ -1,23 +1,24 @@
-package controler;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controller;
 
-import dal.ProductDBContext;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Product;
 
-public class ManagerServlet extends HttpServlet {
+
+public class CartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProductDBContext pdbc = new ProductDBContext();
-        ArrayList<Product> listProducts = pdbc.getAllProducts();
-        request.setAttribute("listProducts", listProducts);
-        request.getRequestDispatcher("view/Manager.jsp").forward(request, response);
+        request.getRequestDispatcher("view/Cart.jsp").forward(request, response);
     }
 
     @Override

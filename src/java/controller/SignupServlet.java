@@ -1,4 +1,4 @@
-package controler;
+package controller;
 
 import dal.AccountDBContext;
 import dal.CustomerDBContext;
@@ -51,15 +51,7 @@ public class SignupServlet extends HttpServlet {
             if(pass.equals(cpass)){
                 adbc.insertAccount(new Account(user, pass));
                 dal.CustomerDBContext cdbc = new CustomerDBContext();
-<<<<<<< HEAD
-<<<<<<< HEAD
                 cdbc.insertCustomer(new Customer(name, Dob, email, adbc.getAccount(name, pass, false)));
-=======
-                cdbc.insertCustomer(new Customer(name, Dob, email, adbc.getAccount(name, pass)));
->>>>>>> parent of 2d533a2 (details + login  + signup)
-=======
-                cdbc.insertCustomer(new Customer(name, Dob, email, adbc.getAccount(name, pass)));
->>>>>>> parent of 9d24984 (before revert)
                 response.sendRedirect("home");
             }
             request.setAttribute("mess", "Confirm password must equal with password!");

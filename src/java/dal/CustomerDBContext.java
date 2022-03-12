@@ -2,6 +2,7 @@ package dal;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +24,6 @@ public class CustomerDBContext extends DBContext {
             Logger.getLogger(CustomerDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-<<<<<<< HEAD
 
     public Customer getCustomerByAccID(int accID) {
         try {
@@ -45,9 +45,6 @@ public class CustomerDBContext extends DBContext {
         return null;
     }
 
-=======
-    
->>>>>>> parent of 2d533a2 (details + login  + signup)
     public static void main(String[] args) {
         dal.CustomerDBContext cdbc = new dal.CustomerDBContext();
         cdbc.insertCustomer(new Customer("Customer01", Date.valueOf("2021-01-01"), "Cus01@email.com", new Account("User01", "User01")));

@@ -1,30 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package controler;
+package controller;
 
+import dal.CustomerDBContext;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.Customer;
 
-
-public class CartServlet extends HttpServlet {
+public class ProfileServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("view/Cart.jsp").forward(request, response);
+        String aid = request.getParameter("Aid");
+        if (aid != null) {
+            CustomerDBContext cdbc = new CustomerDBContext();
+            Customer c = cdbc.getCustomerByAccID(Integer.parseInt(aid));
+            request.setAttribute("customer", c);
+            request.getRequestDispatcher("view/Profile.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("login");
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
     }
 
     @Override

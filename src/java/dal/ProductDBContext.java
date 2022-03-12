@@ -101,7 +101,6 @@ public class ProductDBContext extends DBContext {
         }
         return listProduct;
     }
-<<<<<<< HEAD
     
     public Product getProduct(int pid) {
         try {
@@ -133,8 +132,6 @@ public class ProductDBContext extends DBContext {
         }
         return null;
     }
-=======
->>>>>>> parent of 2d533a2 (details + login  + signup)
 
     public static void main(String[] args) {
         dal.ProductDBContext pdbc = new ProductDBContext();

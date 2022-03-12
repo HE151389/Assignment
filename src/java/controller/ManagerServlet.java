@@ -1,28 +1,23 @@
-package controler;
+package controller;
 
-import dal.CustomerDBContext;
+import dal.ProductDBContext;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Account;
-import model.Customer;
+import model.Product;
 
-public class ProfileServlet extends HttpServlet {
+public class ManagerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Account account = (Account) request.getSession().getAttribute("account");
-        if (account != null) {
-            CustomerDBContext cdbc = new CustomerDBContext();
-            Customer c = cdbc.getCustomerByAccID(account.getAccountID());
-            request.setAttribute("customer", c);
-            request.getRequestDispatcher("view/Profile.jsp").forward(request, response);
-        } else {
-            response.sendRedirect("login");
-        }
+        ProductDBContext pdbc = new ProductDBContext();
+        ArrayList<Product> listProducts = pdbc.getAllProducts();
+        request.setAttribute("listProducts", listProducts);
+        request.getRequestDispatcher("view/Manager.jsp").forward(request, response);
     }
 
     @Override

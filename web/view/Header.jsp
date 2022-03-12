@@ -54,13 +54,8 @@
 
                 <ul class="user-menu">
                     <li><a href="#"><i class='bx bx-bell'></i></a></li>
-<<<<<<< HEAD
-                    <li><a href="login"><i class='bx bx-user-circle'></i></a></li>
-                    <li><a href="#"><i class='bx bx-cart'></i></a></li>
-=======
-                    <li><a href="profile"><i class='bx bx-user-circle'></i></a></li>
+                    <li><a href="profile?Aid=${sessionScope.account.accountID}"><i class='bx bx-user-circle'></i></a></li>
                     <li><a href="cart"><i class='bx bx-cart'></i></a></li>
->>>>>>> parent of 9d24984 (before revert)
                 </ul>
             </div>
         </div>
