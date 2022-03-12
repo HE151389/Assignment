@@ -102,6 +102,7 @@ public class ProductDBContext extends DBContext {
         return listProduct;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     public Product getProduct(int pid) {
         try {
@@ -133,6 +134,8 @@ public class ProductDBContext extends DBContext {
         }
         return null;
     }
+=======
+>>>>>>> parent of 2d533a2 (details + login  + signup)
 =======
 >>>>>>> parent of 2d533a2 (details + login  + signup)
 

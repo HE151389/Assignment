@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/CartServlet.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/Login.jsp</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/ManagerServlet.java</file>
@@ -18,6 +19,12 @@
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/ProfileServlet.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/dal/ProductDBContext.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/model/Product.java</file>
+=======
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/css/app.css</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controler/HomeServlet.java</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/dal/DBContext.java</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/Home.jsp</file>
+>>>>>>> parent of 2d533a2 (details + login  + signup)
         </group>
     </open-files>
 </project-private>

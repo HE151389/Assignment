@@ -25,6 +25,7 @@
         <servlet-class>controler.SearchServlet</servlet-class>
     </servlet>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>controler.LogoutServlet</servlet-class>
@@ -41,6 +42,8 @@
         <servlet-name>CartServlet</servlet-name>
         <servlet-class>controler.CartServlet</servlet-class>
     </servlet>
+=======
+>>>>>>> parent of 2d533a2 (details + login  + signup)
 =======
 >>>>>>> parent of 2d533a2 (details + login  + signup)
     <servlet-mapping>
@@ -68,6 +71,7 @@
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
@@ -84,6 +88,8 @@
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> parent of 2d533a2 (details + login  + signup)
 =======
 >>>>>>> parent of 2d533a2 (details + login  + signup)
     <session-config>

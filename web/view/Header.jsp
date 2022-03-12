@@ -56,7 +56,11 @@
                     <li><a href="#"><i class='bx bx-bell'></i></a></li>
                     <li><a href="login"><i class='bx bx-user-circle'></i></a></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <li><a href="cart"><i class='bx bx-cart'></i></a></li>
+=======
+                    <li><a href="#"><i class='bx bx-cart'></i></a></li>
+>>>>>>> parent of 2d533a2 (details + login  + signup)
 =======
                     <li><a href="#"><i class='bx bx-cart'></i></a></li>
 >>>>>>> parent of 2d533a2 (details + login  + signup)

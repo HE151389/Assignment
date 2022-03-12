@@ -45,7 +45,7 @@
             </div>
         </c:if>
         <c:if test="${sessionScope.account != null}">
-            <c:redirect url="profile"></c:redirect>
+            <c:redirect url="accountInfo"></c:redirect>
         </c:if>
     </body>
 </html>
