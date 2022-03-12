@@ -51,7 +51,11 @@ public class SignupServlet extends HttpServlet {
             if(pass.equals(cpass)){
                 adbc.insertAccount(new Account(user, pass));
                 dal.CustomerDBContext cdbc = new CustomerDBContext();
+<<<<<<< HEAD
                 cdbc.insertCustomer(new Customer(name, Dob, email, adbc.getAccount(name, pass, false)));
+=======
+                cdbc.insertCustomer(new Customer(name, Dob, email, adbc.getAccount(name, pass)));
+>>>>>>> parent of 2d533a2 (details + login  + signup)
                 response.sendRedirect("home");
             }
             request.setAttribute("mess", "Confirm password must equal with password!");

@@ -20,7 +20,7 @@
                             <div class="img-circle text-center mb-3">
                                 <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/271deea8-e28c-41a3-aaf5-2913f5f48be6/de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI3MWRlZWE4LWUyOGMtNDFhMy1hYWY1LTI5MTNmNWY0OGJlNlwvZGU3ODM0cy02NTE1YmQ0MC04YjJjLTRkYzYtYTg0My01YWMxYTk1YThiNTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BopkDn1ptIwbmcKHdAOlYHyAOOACXW0Zfgbs0-6BY-E" alt="Image" class="shadow">
                             </div>
-                            <h4 class="text-center">${requestScope.customer.name}</h4>
+                            <h4 class="text-center">Kiran Acharya</h4>
                         </div>
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
@@ -37,8 +37,9 @@
                         <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
                             <h3 class="mb-4">Profile</h3>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
+<<<<<<< HEAD
                                         <label>Name</label>
                                         <input type="text" class="form-control" value="Kiran">
                                     </div>
@@ -48,11 +49,30 @@
                                     <div class="form-group">
                                         <label>DoB</label>
                                         <input type="text" class="form-control" value="kiranacharya287@gmail.com">
+=======
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control" value="Kiran">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input type="text" class="form-control" value="Acharya">
+>>>>>>> parent of 2d533a2 (details + login  + signup)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Email</label>
+<<<<<<< HEAD
+=======
+                                        <input type="text" class="form-control" value="kiranacharya287@gmail.com">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Phone number</label>
+>>>>>>> parent of 2d533a2 (details + login  + signup)
                                         <input type="text" class="form-control" value="+91 9876543215">
                                     </div>
                                 </div>
@@ -65,7 +85,7 @@
                         <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
                             <h3 class="mb-4">Password Settings</h3>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Old password</label>
                                         <input type="password" class="form-control">
@@ -73,13 +93,13 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>New password</label>
                                         <input type="password" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Confirm new password</label>
                                         <input type="password" class="form-control">

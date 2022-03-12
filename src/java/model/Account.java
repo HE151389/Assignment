@@ -4,16 +4,14 @@ public class Account {
     private int accountID;
     private String userName;
     private String password;
-    private boolean isAdmin;
 
     public Account() {
     }
 
-    public Account(int accountID, String userName, String password, boolean isAdmin) {
+    public Account(int accountID, String userName, String password) {
         this.accountID = accountID;
         this.userName = userName;
         this.password = password;
-        this.isAdmin = isAdmin;
     }
 
     public Account(String userName, String password) {
@@ -44,6 +42,7 @@ public class Account {
     public void setPassword(String password) {
         this.password = password;
     }
+<<<<<<< HEAD
 
     public boolean isIsAdmin() {
         return isAdmin;
@@ -52,5 +51,7 @@ public class Account {
     public void setIsAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
+=======
+>>>>>>> parent of 2d533a2 (details + login  + signup)
     
 }

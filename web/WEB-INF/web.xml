@@ -13,8 +13,13 @@
         <servlet-class>controler.SignupServlet</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
         <servlet-name>ProfileServlet</servlet-name>
         <servlet-class>controler.ProfileServlet</servlet-class>
+=======
+        <servlet-name>Profile</servlet-name>
+        <servlet-class>controler.Profile</servlet-class>
+>>>>>>> parent of 2d533a2 (details + login  + signup)
     </servlet>
     <servlet>
         <servlet-name>CategoryServlet</servlet-name>
@@ -24,6 +29,7 @@
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>controler.SearchServlet</servlet-class>
     </servlet>
+<<<<<<< HEAD
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>controler.LogoutServlet</servlet-class>
@@ -36,6 +42,8 @@
         <servlet-name>CartServlet</servlet-name>
         <servlet-class>controler.CartServlet</servlet-class>
     </servlet>
+=======
+>>>>>>> parent of 2d533a2 (details + login  + signup)
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -60,6 +68,7 @@
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
@@ -72,6 +81,8 @@
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> parent of 2d533a2 (details + login  + signup)
     <session-config>
         <session-timeout>
             30
