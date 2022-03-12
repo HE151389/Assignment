@@ -14,10 +14,10 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Account account = (Account) request.getSession().getAttribute("account");
-        if (account != null) {
+        String aid = request.getParameter("Aid");
+        if (aid != null) {
             CustomerDBContext cdbc = new CustomerDBContext();
-            Customer c = cdbc.getCustomerByAccID(account.getAccountID());
+            Customer c = cdbc.getCustomerByAccID(Integer.parseInt(aid));
             request.setAttribute("customer", c);
             request.getRequestDispatcher("view/Profile.jsp").forward(request, response);
         } else {
