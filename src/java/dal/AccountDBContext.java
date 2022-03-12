@@ -8,18 +8,20 @@ import java.util.logging.Logger;
 import model.Account;
 
 public class AccountDBContext extends DBContext{
-    public Account getAccount(String userName, String password){
-        String sql = "SELECT * FROM Account WHERE userName = ? AND password = ?";
+    public Account getAccount(String userName, String password, boolean isAdmin){
+        String sql = "SELECT * FROM Account WHERE userName = ? AND password = ? AND isAdmin = ?";
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, userName);
             statement.setString(2, password);
+            statement.setBoolean(3, isAdmin);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 Account a = new Account();
                 a.setAccountID(rs.getInt(1));
                 a.setUserName(rs.getString(2));
                 a.setPassword(rs.getString(3));
+                a.setIsAdmin(rs.getBoolean(4));
                 return a;
             }
         } catch (SQLException ex) {
@@ -59,14 +61,14 @@ public class AccountDBContext extends DBContext{
         }
     }
     
-    public static void main(String[] args) {
-        dal.AccountDBContext dabd = new AccountDBContext();
-        Account a = new Account(1,"Admin01","Admin01");
-        dabd.insertAccount(a);
-        Account n = dabd.getAccount("Admin01","Admin01");
-//        for (Account a : lDAs) {
-            System.out.println(n.getUserName());
-//        n
-
-    }
+//    public static void main(String[] args) {
+//        dal.AccountDBContext dabd = new AccountDBContext();
+//        Account a = new Account(1,"Admin01","Admin01");
+//        dabd.insertAccount(a);
+//        Account n = dabd.getAccount("Admin01","Admin01");
+////        for (Account a : lDAs) {
+//            System.out.println(n.getUserName());
+////        n
+//
+//    }
 }

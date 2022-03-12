@@ -37,27 +37,22 @@
                         <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
                             <h3 class="mb-4">Profile</h3>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>First Name</label>
+                                        <label>Name</label>
                                         <input type="text" class="form-control" value="Kiran">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" value="Acharya">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Email</label>
+                                        <label>DoB</label>
                                         <input type="text" class="form-control" value="kiranacharya287@gmail.com">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Phone number</label>
+                                        <label>Email</label>
                                         <input type="text" class="form-control" value="+91 9876543215">
                                     </div>
                                 </div>
@@ -70,7 +65,7 @@
                         <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
                             <h3 class="mb-4">Password Settings</h3>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Old password</label>
                                         <input type="password" class="form-control">
@@ -78,13 +73,13 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label>New password</label>
                                         <input type="password" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Confirm new password</label>
                                         <input type="password" class="form-control">
@@ -99,19 +94,19 @@
                         <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
                             <h3 class="mb-4">Security Settings</h3>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Login</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Two-factor auth</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="" id="recovery">
@@ -130,7 +125,7 @@
                         <div class="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
                             <h3 class="mb-4">Application Settings</h3>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="" id="app-check">
