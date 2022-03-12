@@ -14,7 +14,7 @@
     </servlet>
     <servlet>
         <servlet-name>Profile</servlet-name>
-        <servlet-class>controler.Profile</servlet-class>
+        <servlet-class>controler.ProfileServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Category</servlet-name>
@@ -24,7 +24,6 @@
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>controler.SearchServlet</servlet-class>
     </servlet>
-<<<<<<< HEAD
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>controler.LogoutServlet</servlet-class>
@@ -34,19 +33,13 @@
         <servlet-class>controler.ManagerServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ProductDetailsServlet</servlet-name>
-        <servlet-class>controler.ProductDetailsServlet</servlet-class>
+        <servlet-name>ProductDetailServlet</servlet-name>
+        <servlet-class>controler.ProductDetailServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CartServlet</servlet-name>
         <servlet-class>controler.CartServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ProductDetailServlet</servlet-name>
-        <servlet-class>controler.ProductDetailServlet</servlet-class>
-    </servlet>
-=======
->>>>>>> parent of 2d533a2 (details + login  + signup)
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -71,26 +64,21 @@
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
-<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ManagerServlet</servlet-name>
-        <url-pattern>manager</url-pattern>
+        <url-pattern>/manager</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ProductDetailsServlet</servlet-name>
-        <url-pattern>productDetails</url-pattern>
+        <servlet-name>ProductDetailServlet</servlet-name>
+        <url-pattern>/productDetails</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ProductDetailServlet</servlet-name>
-        <url-pattern>/details</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

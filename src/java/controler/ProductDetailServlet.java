@@ -16,9 +16,9 @@ public class ProductDetailServlet extends HttpServlet {
             throws ServletException, IOException {
         int pid = Integer.parseInt(request.getParameter("pid"));
         ProductDBContext pdbc = new ProductDBContext();
-        Product product = pdbc.getProduct(pid);
-        request.setAttribute("product", product);
-        request.getRequestDispatcher("").forward(request, response);
+        Product p = pdbc.getProduct(pid);
+        request.setAttribute("product", p);
+        request.getRequestDispatcher("view/ProductDetails.jsp").forward(request, response);
     }
 
     @Override

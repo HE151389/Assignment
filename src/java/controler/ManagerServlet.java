@@ -17,7 +17,7 @@ public class ManagerServlet extends HttpServlet {
         ProductDBContext pdbc = new ProductDBContext();
         ArrayList<Product> listProducts = pdbc.getAllProducts();
         request.setAttribute("listProducts", listProducts);
-        request.getRequestDispatcher("../view/manager.jsp").forward(request, response);
+        request.getRequestDispatcher("view/Manager.jsp").forward(request, response);
     }
 
     @Override

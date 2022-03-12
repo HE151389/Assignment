@@ -11,11 +11,12 @@ public class Product {
     private String urlImg1;
     private String urlImg2;
     private Category category;
+    private String des;
 
     public Product() {
     }
 
-    public Product(int ID, String name, int quantity, double price, String form, String from, String urlImg1, String urlImg2, Category category) {
+    public Product(int ID, String name, int quantity, double price, String form, String from, String urlImg1, String urlImg2, Category category, String des) {
         this.ID = ID;
         this.name = name;
         this.quantity = quantity;
@@ -25,8 +26,9 @@ public class Product {
         this.urlImg1 = urlImg1;
         this.urlImg2 = urlImg2;
         this.category = category;
+        this.des = des;
     }
-
+    
     public int getID() {
         return ID;
     }
@@ -97,6 +99,14 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getDes() {
+        return des;
+    }
+
+    public void setDes(String des) {
+        this.des = des;
     }
     
 }

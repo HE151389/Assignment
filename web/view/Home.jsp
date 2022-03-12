@@ -35,7 +35,7 @@
                         <div class="col-3 col-md-6 col-sm-12">
                             <div class="product-card">
                                 <div class="product-card-img">
-                                    <a href="product/details?pid=${p.ID}">
+                                    <a href="productDetails?pid=${p.ID}">
                                     <img src="${p.urlImg1}" alt="">
                                     <img src="${p.urlImg2}" alt="">
                                     </a>
