@@ -1,5 +1,6 @@
 package controller;
 
+import dal.AccountDBContext;
 import dal.CustomerDBContext;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -14,21 +15,25 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String aid = request.getParameter("Aid");
-        if (aid != null) {
+        try {
+            int Aid = Integer.parseInt(request.getParameter("Aid"));
+            AccountDBContext adbc = new AccountDBContext();
             CustomerDBContext cdbc = new CustomerDBContext();
-            Customer c = cdbc.getCustomerByAccID(Integer.parseInt(aid));
+            Customer c = cdbc.getCustomerByAccID(Aid);
+            Account a = adbc.getAccountByAid(Aid);
             request.setAttribute("customer", c);
             request.getRequestDispatcher("view/Profile.jsp").forward(request, response);
-        } else {
+
+        } catch (Exception e) {
             response.sendRedirect("login");
         }
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     @Override

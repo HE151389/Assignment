@@ -1,12 +1,14 @@
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Cart</title>
-        <link href="css/manage.css" rel="stylesheet" type="text/css"/>
+        <title>Product Management</title>
+        <link href="css/manager.css" rel="stylesheet" type="text/css"/>
+        
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -34,6 +36,7 @@
         </script>
     </head>
     <body>
+        <jsp:include page="Header.jsp"></jsp:include>
         <div class="container-xl">
             <div class="table-responsive">
                 <div class="table-wrapper">			
@@ -41,11 +44,11 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="show-entries">
-                                    <button type="button" class="btn btn-link">Link</button>
+                                    <button type="button" class="btn btn-link"><a href="home">Back</a></button>
                                 </div>						
                             </div>
                             <div class="col-sm-4">
-                                <h2 class="text-center">Customer <b>Details</b></h2>
+                                <h2 class="text-center">Product <b>Management</b></h2>
                             </div>
                             <div class="col-sm-4">
                                 <div class="search-box">
@@ -60,33 +63,35 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>ID</th>
                                 <th>Name <i class="fa fa-sort"></i></th>
-                                <th>Address</th>
-                                <th>City <i class="fa fa-sort"></i></th>
-                                <th>Pin Code</th>
-                                <th>Country <i class="fa fa-sort"></i></th>
+                                <th>Quantity</th>
+                                <th>Price<i class="fa fa-sort"></i></th>
+                                <th>Category</th>
+                                <th>From<i class="fa fa-sort"></i></th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <c:forEach items="${requestScope.listProducts}" var="p">
                             <tr>
-                                <td>1</td>
-                                <td>Thomas Hardy</td>
-                                <td>89 Chiaroscuro Rd.</td>
-                                <td>Portland</td>
-                                <td>97219</td>
-                                <td>USA</td>
+                                <td>${p.ID}</td>
+                                <td>${p.name}</td>
+                                <td>${p.quantity}</td>
+                                <td>${p.price}</td>
+                                <td>${p.category.name}</td>
+                                <td>${p.from}</td>
                                 <td>
-                                    <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                                    <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                    <a href="update?Pid=${p.ID}" class="edit" title="Update" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                                     <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                 </td>
                             </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>
             </div>        
-        </div>     
+        </div> 
+        <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>                                		

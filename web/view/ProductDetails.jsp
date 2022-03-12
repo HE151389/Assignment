@@ -10,7 +10,6 @@
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/productDetail.css" rel="stylesheet" type="text/css"/>
-        <link href="css/app.css" rel="stylesheet" type="text/css"/>
         <title>${requestScope.product.name} Detail</title>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">

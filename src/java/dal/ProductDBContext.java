@@ -28,9 +28,10 @@ public class ProductDBContext extends DBContext {
                 p.setFrom(rs.getString(6));
                 p.setUrlImg1(rs.getString(7));
                 p.setUrlImg2(rs.getString(8));
+                p.setDes(rs.getString(10));
                 Category c = new Category();
                 c.setCategoryID(rs.getString(9));
-                c.setName(rs.getString(10));
+                c.setName(rs.getString(11));
                 p.setCategory(c);
                 listProduct.add(p);
             }

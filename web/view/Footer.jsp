@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link href="css/app.css" rel="stylesheet" type="text/css"/>
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <!-- footer -->
 <footer class="bg-second">
     <div class="footer-container">

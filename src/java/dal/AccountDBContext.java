@@ -41,6 +41,7 @@ public class AccountDBContext extends DBContext{
                 a.setAccountID(rs.getInt(1));
                 a.setUserName(rs.getString(2));
                 a.setPassword(rs.getString(3));
+                a.setIsAdmin(rs.getBoolean(4));
                 return a;
             }
         } catch (SQLException ex) {
@@ -50,15 +51,36 @@ public class AccountDBContext extends DBContext{
     }
     
     public void insertAccount(Account a){
-        String sql = "INSERT INTO Account(username,password) VALUES(?,?)";
+        String sql = "INSERT INTO Account(username,password,isAdmin) VALUES(?,?,?)";
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, a.getUserName());
             statement.setString(2, a.getPassword());
+            statement.setBoolean(3, a.isIsAdmin());
             statement.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public Account getAccountByAid(int Aid){
+        String sql = "SELECT * FROM Account WHERE Aid = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, Aid);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Account a = new Account();
+                a.setAccountID(rs.getInt(1));
+                a.setUserName(rs.getString(2));
+                a.setPassword(rs.getString(3));
+                a.setIsAdmin(rs.getBoolean(4));
+                return a;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
     
 //    public static void main(String[] args) {

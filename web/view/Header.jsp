@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link href="css/app.css" rel="stylesheet" type="text/css"/>
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <!-- header -->
 <header>
     <!-- mobile menu -->
@@ -45,6 +47,9 @@
                                     </div>
                                 </li>
                                 <!-- end mega menu -->
+                                <c:if test="${sessionScope.account.isAdmin}">
+                                    <li><a href="manager">Manager Product</a></li>
+                                    </c:if>
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">contact</a></li>
                             </ul>
@@ -53,9 +58,10 @@
                 </div>
 
                 <ul class="user-menu">
+
                     <li><a href="#"><i class='bx bx-bell'></i></a></li>
                     <li><a href="profile?Aid=${sessionScope.account.accountID}"><i class='bx bx-user-circle'></i></a></li>
-                    <li><a href="cart"><i class='bx bx-cart'></i></a></li>
+                    <li><a href="cart${sessionScope.account==null? "" : "?Aid="}${sessionScope.account==null? "" : sessionScope.account.accountID}"><i class='bx bx-cart'></i></a></li>
                 </ul>
             </div>
         </div>
@@ -66,7 +72,7 @@
     <script>
         function doSearch() {
             var c = document.getElementById("search").value;
-            window.location.href = "search?search="+c;
+            window.location.href = "search?search=" + c;
         }
     </script>
     <!-- end main header -->

@@ -2,48 +2,52 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>controler.HomeServlet</servlet-class>
+        <servlet-class>controller.HomeServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>controler.LoginServlet</servlet-class>
+        <servlet-class>controller.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SignupServlet</servlet-name>
-        <servlet-class>controler.SignupServlet</servlet-class>
+        <servlet-class>controller.SignupServlet</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
         <servlet-name>ProfileServlet</servlet-name>
-        <servlet-class>controler.ProfileServlet</servlet-class>
-=======
-        <servlet-name>Profile</servlet-name>
-        <servlet-class>controler.Profile</servlet-class>
->>>>>>> parent of 2d533a2 (details + login  + signup)
+        <servlet-class>controller.ProfileServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CategoryServlet</servlet-name>
-        <servlet-class>controler.CategoryServlet</servlet-class>
+        <servlet-class>controller.CategoryServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SearchServlet</servlet-name>
-        <servlet-class>controler.SearchServlet</servlet-class>
+        <servlet-class>controller.SearchServlet</servlet-class>
     </servlet>
-<<<<<<< HEAD
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>controler.LogoutServlet</servlet-class>
+        <servlet-class>controller.LogoutServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ManagerServlet</servlet-name>
-        <servlet-class>controler.ManagerServlet</servlet-class>
+        <servlet-class>controller.ManagerServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CartServlet</servlet-name>
-        <servlet-class>controler.CartServlet</servlet-class>
+        <servlet-class>controller.CartServlet</servlet-class>
     </servlet>
-=======
->>>>>>> parent of 2d533a2 (details + login  + signup)
+    <servlet>
+        <servlet-name>ProductDetails</servlet-name>
+        <servlet-class>controller.ProductDetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateProductServlet</servlet-name>
+        <servlet-class>controller.UpdateProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <servlet-class>controller.AddToCartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -68,7 +72,6 @@
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
-<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
@@ -81,8 +84,18 @@
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
-=======
->>>>>>> parent of 2d533a2 (details + login  + signup)
+    <servlet-mapping>
+        <servlet-name>ProductDetails</servlet-name>
+        <url-pattern>/productDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateProductServlet</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <url-pattern>/addToCart</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

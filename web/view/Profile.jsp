@@ -31,6 +31,10 @@
                                 <i class="fa fa-key text-center mr-1"></i> 
                                 Password
                             </a>
+                            <a class="nav-link" href="logout" >
+                                <i class="fa fa-sign-out text-center mr-1"></i> 
+                                Logout
+                            </a>
                         </div>
                     </div>
                     <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
@@ -40,20 +44,20 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" class="form-control" value="Kiran">
+                                        <input type="text" class="form-control" value="${requestScope.customer.name}">
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>DoB</label>
-                                        <input type="text" class="form-control" value="kiranacharya287@gmail.com">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" value="${requestScope.customer.email}">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="text" class="form-control" value="+91 9876543215">
+                                        <label>Date of Birth</label>
+                                        <input type="text" class="form-control" value="${requestScope.customer.doB}">
                                     </div>
                                 </div>
                             </div>
