@@ -6,7 +6,6 @@ public class Product {
     private String name;
     private int quantity;
     private double price;
-    private String form;
     private String from;
     private String urlImg1;
     private String urlImg2;
@@ -16,18 +15,15 @@ public class Product {
     public Product() {
     }
 
-    public Product(int ID, String name, int quantity, double price, String form, String from, String urlImg1, String urlImg2, Category category, String des) {
-
+    public Product(int ID, String name, int quantity, double price, String from, String urlImg1, String urlImg2, Category category, String des) {
         this.ID = ID;
         this.name = name;
         this.quantity = quantity;
         this.price = price;
-        this.form = form;
         this.from = from;
         this.urlImg1 = urlImg1;
         this.urlImg2 = urlImg2;
         this.category = category;
-
         this.des = des;
     }
 
@@ -61,14 +57,6 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public String getForm() {
-        return form;
-    }
-
-    public void setForm(String form) {
-        this.form = form;
     }
 
     public String getFrom() {

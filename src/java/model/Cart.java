@@ -1,52 +1,38 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Cart {
-    private int cartID;
-    private Customer customer;
-    private double total;
-    private ArrayList<CartDetail> listCartDetails = new ArrayList<>();
-
+    private LinkedHashMap<Integer,Product> cart = new LinkedHashMap<>();
+    private double totalMoney;
+            
     public Cart() {
     }
 
-    public Cart(int cartID, Customer customer, double total) {
-        this.cartID = cartID;
-        this.customer = customer;
-        this.total = total;
+    public Cart(double totalMoney) {
+        this.totalMoney = totalMoney;
+    }
+    
+    public LinkedHashMap<Integer, Product> getCart() {
+        return cart;
     }
 
-    public int getCartID() {
-        return cartID;
+    public void setCart(LinkedHashMap<Integer, Product> cart) {
+        this.cart = cart;
     }
 
-    public void setCartID(int cartID) {
-        this.cartID = cartID;
+    public double getTotalMoney() {
+        totalMoney = 0;
+        for (Map.Entry<Integer, Product> entry : cart.entrySet()) {
+            Product value = entry.getValue();
+            totalMoney+= value.getPrice() * value.getQuantity();
+        }
+        return totalMoney;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public ArrayList<CartDetail> getListCartDetails() {
-        return listCartDetails;
-    }
-
-    public void setListCartDetails(ArrayList<CartDetail> listCartDetails) {
-        this.listCartDetails = listCartDetails;
+    public void setTotalMoney(double totalMoney) {
+        this.totalMoney = totalMoney;
     }
     
 }

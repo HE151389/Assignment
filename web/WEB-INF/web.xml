@@ -48,6 +48,14 @@
         <servlet-name>AddToCartServlet</servlet-name>
         <servlet-class>controller.AddToCartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteCartServlet</servlet-name>
+        <servlet-class>controller.DeleteCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChangeCartServlet</servlet-name>
+        <servlet-class>controller.ChangeCartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -95,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>AddToCartServlet</servlet-name>
         <url-pattern>/addToCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCartServlet</servlet-name>
+        <url-pattern>/deleteCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangeCartServlet</servlet-name>
+        <url-pattern>/changeCart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

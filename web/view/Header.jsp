@@ -61,7 +61,7 @@
 
                     <li><a href="#"><i class='bx bx-bell'></i></a></li>
                     <li><a href="profile?Aid=${sessionScope.account.accountID}"><i class='bx bx-user-circle'></i></a></li>
-                    <li><a href="cart${sessionScope.account==null? "" : "?Aid="}${sessionScope.account==null? "" : sessionScope.account.accountID}"><i class='bx bx-cart'></i></a></li>
+                    <li><a href="cart"><i class='bx bx-cart'></i></a></li>
                 </ul>
             </div>
         </div>

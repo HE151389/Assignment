@@ -24,14 +24,13 @@ public class ProductDBContext extends DBContext {
                 p.setName(rs.getString(2));
                 p.setQuantity(rs.getInt(3));
                 p.setPrice(rs.getDouble(4));
-                p.setForm(rs.getString(5));
-                p.setFrom(rs.getString(6));
-                p.setUrlImg1(rs.getString(7));
-                p.setUrlImg2(rs.getString(8));
-                p.setDes(rs.getString(10));
+                p.setFrom(rs.getString(5));
+                p.setUrlImg1(rs.getString(6));
+                p.setUrlImg2(rs.getString(7));
+                p.setDes(rs.getString(9));
                 Category c = new Category();
-                c.setCategoryID(rs.getString(9));
-                c.setName(rs.getString(11));
+                c.setCategoryID(rs.getString(8));
+                c.setName(rs.getString(10));
                 p.setCategory(c);
                 listProduct.add(p);
             }
@@ -56,12 +55,12 @@ public class ProductDBContext extends DBContext {
                 p.setName(rs.getString(2));
                 p.setQuantity(rs.getInt(3));
                 p.setPrice(rs.getDouble(4));
-                p.setForm(rs.getString(5));
-                p.setFrom(rs.getString(6));
-                p.setUrlImg1(rs.getString(7));
-                p.setUrlImg2(rs.getString(8));
+                p.setFrom(rs.getString(5));
+                p.setUrlImg1(rs.getString(6));
+                p.setUrlImg2(rs.getString(7));
+                p.setDes(rs.getString(9));
                 Category c = new Category();
-                c.setCategoryID(rs.getString(9));
+                c.setCategoryID(rs.getString(8));
                 c.setName(rs.getString(10));
                 p.setCategory(c);
                 listProduct.add(p);
@@ -87,12 +86,12 @@ public class ProductDBContext extends DBContext {
                 p.setName(rs.getString(2));
                 p.setQuantity(rs.getInt(3));
                 p.setPrice(rs.getDouble(4));
-                p.setForm(rs.getString(5));
-                p.setFrom(rs.getString(6));
-                p.setUrlImg1(rs.getString(7));
-                p.setUrlImg2(rs.getString(8));
+                p.setFrom(rs.getString(5));
+                p.setUrlImg1(rs.getString(6));
+                p.setUrlImg2(rs.getString(7));
+                p.setDes(rs.getString(9));
                 Category c = new Category();
-                c.setCategoryID(rs.getString(9));
+                c.setCategoryID(rs.getString(8));
                 c.setName(rs.getString(10));
                 p.setCategory(c);
                 listProduct.add(p);
@@ -117,14 +116,13 @@ public class ProductDBContext extends DBContext {
                 p.setName(rs.getString(2));
                 p.setQuantity(rs.getInt(3));
                 p.setPrice(rs.getDouble(4));
-                p.setForm(rs.getString(5));
-                p.setFrom(rs.getString(6));
-                p.setUrlImg1(rs.getString(7));
-                p.setUrlImg2(rs.getString(8));
-                p.setDes(rs.getString(10));
+                p.setFrom(rs.getString(5));
+                p.setUrlImg1(rs.getString(6));
+                p.setUrlImg2(rs.getString(7));
+                p.setDes(rs.getString(9));
                 Category c = new Category();
-                c.setCategoryID(rs.getString(9));
-                c.setName(rs.getString(11));
+                c.setCategoryID(rs.getString(8));
+                c.setName(rs.getString(10));
                 p.setCategory(c);
                 return p;
             }
@@ -132,6 +130,10 @@ public class ProductDBContext extends DBContext {
             Logger.getLogger(ProductDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+    
+    public void insertProducts(){
+        
     }
 
     public static void main(String[] args) {
