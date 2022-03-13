@@ -53,7 +53,7 @@
                                 <div class="col-sm-4">
                                     <div class="search-box">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">
                                             Create Product
                                         </button>
                                         <!--                                        <div class="input-group">
@@ -86,8 +86,67 @@
                                     <td>${p.category.name}</td>
                                     <td>${p.from}</td>
                                     <td>
-                                        <a href="update?Pid=${p.ID}" class="edit" title="Update" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                        <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                        <a data-toggle="modal" data-target="#updateModal${p.ID}" class="edit" title="Update" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                        <a onclick="doDelete(${p.ID})" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                        <form action="updateProduct?pID=${p.ID}" method="post">
+                                            <div class="modal fade" id="updateModal${p.ID}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Update Product</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <table class="text-left table-responsive">
+                                                                <tr>
+                                                                    <td>Name:</td>
+                                                                    <td><input name="name" type="text" value="${p.name}" required/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Quantity:</td>
+                                                                    <td><input name="quantity" min="1" type="number" value="${p.quantity}" required/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Price:</td>
+                                                                    <td><input name="price" min="0.01" type="number" step="0.01" value="${p.price}" required/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>From:</td>
+                                                                    <td><input name="from" type="text" value="${p.from}" required/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Image:</td>
+                                                                    <td><img style="max-width: 50px" src="${p.urlImg1}" /><input name="image1" type="file" value="${p.urlImg1}" /></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><img style="max-width: 50px" src="${p.urlImg2}" /><input name="image2" type="file" value="${p.urlImg2}"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Category:</td>
+                                                                    <td><select name="category">
+                                                                            <c:forEach items="${requestScope.listCategorys}" var="c">
+                                                                                <option value="${c.categoryID}">${c.name}</option>
+                                                                            </c:forEach>
+                                                                        </select>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Desciption:</td>
+                                                                    <td><textarea name="des">${p.des}</textarea></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -96,9 +155,9 @@
                 </div>
             </div>        
         </div> 
-        <!-- Modal -->
-        <form>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Modal Create -->
+        <form action="createProduct" method="post">
+            <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -111,40 +170,59 @@
                             <table class="text-left table btn">
                                 <tr>
                                     <td>Name:</td>
-                                    <td><input name="name" type="text"/></td>
+                                    <td><input name="name" type="text" required/></td>
                                 </tr>
                                 <tr>
                                     <td>Quantity:</td>
-                                    <td><input name="quantity" min="1" type="number"/></td>
+                                    <td><input name="quantity" min="1" type="number" required/></td>
                                 </tr>
                                 <tr>
                                     <td>Price:</td>
-                                    <td><input name="price" min="1" type="number"/></td>
+                                    <td><input name="price" min="0.01" type="number" step="0.01" required/></td>
                                 </tr>
                                 <tr>
                                     <td>From:</td>
-                                    <td><input name="from" type="text"/></td>
+                                    <td><input name="from" type="text" required/></td>
+                                </tr>
+                                <tr>
+                                    <td>Image:</td>
+                                    <td><input name="image1" type="file" required/></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input name="image2" type="file" required/></td>
                                 </tr>
                                 <tr>
                                     <td>Category:</td>
-                                    <td><select>
-                                        <c:forEach items="${requestScope.listCategorys}" var="c">
-                                            <option>${c.name}</option>
-                                        </c:forEach>
+                                    <td><select name="category">
+                                            <c:forEach items="${requestScope.listCategorys}" var="c">
+                                                <option value="${c.categoryID}">${c.name}</option>
+                                            </c:forEach>
                                         </select>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td>Desciption:</td>
+                                    <td><textarea name="des"></textarea></td>
                                 </tr>
                             </table>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </form>
         <jsp:include page="Footer.jsp"></jsp:include>
     </body>
+    <script>
+        function doDelete(id) {
+            var c = confirm("Do you want to delete student?");
+            if (c) {
+                window.location.href = "deleteProduct?pID=" + id;
+            }
+        }
+    </script>
 </html>                                		

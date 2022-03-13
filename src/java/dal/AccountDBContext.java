@@ -11,11 +11,11 @@ public class AccountDBContext extends DBContext{
     public Account getAccount(String userName, String password, boolean isAdmin){
         String sql = "SELECT * FROM Account WHERE userName = ? AND password = ? AND isAdmin = ?";
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(sql);
             statement.setString(1, userName);
             statement.setString(2, password);
             statement.setBoolean(3, isAdmin);
-            ResultSet rs = statement.executeQuery();
+            rs = statement.executeQuery();
             while (rs.next()) {
                 Account a = new Account();
                 a.setAccountID(rs.getInt(1));
@@ -33,9 +33,9 @@ public class AccountDBContext extends DBContext{
     public Account getAccountByUsername(String userName){
         String sql = "SELECT * FROM Account WHERE userName = ?";
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(sql);
             statement.setString(1, userName);
-            ResultSet rs = statement.executeQuery();
+            rs = statement.executeQuery();
             while (rs.next()) {
                 Account a = new Account();
                 a.setAccountID(rs.getInt(1));
@@ -53,7 +53,7 @@ public class AccountDBContext extends DBContext{
     public void insertAccount(Account a){
         String sql = "INSERT INTO Account(username,password,isAdmin) VALUES(?,?,?)";
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(sql);
             statement.setString(1, a.getUserName());
             statement.setString(2, a.getPassword());
             statement.setBoolean(3, a.isIsAdmin());
@@ -66,9 +66,9 @@ public class AccountDBContext extends DBContext{
     public Account getAccountByAid(int Aid){
         String sql = "SELECT * FROM Account WHERE Aid = ?";
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(sql);
             statement.setInt(1, Aid);
-            ResultSet rs = statement.executeQuery();
+            rs = statement.executeQuery();
             while (rs.next()) {
                 Account a = new Account();
                 a.setAccountID(rs.getInt(1));

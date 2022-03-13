@@ -1,8 +1,6 @@
 package dal;
 
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,7 +12,7 @@ public class CustomerDBContext extends DBContext {
     public void insertCustomer(Customer cus) {
         String sql = "INSERT INTO Customer(name,dob,email,Aid) VALUES (?,?,?,?)";
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(sql);
             statement.setString(1, cus.getName());
             statement.setDate(2, cus.getDoB());
             statement.setString(3, cus.getEmail());
@@ -28,9 +26,9 @@ public class CustomerDBContext extends DBContext {
     public Customer getCustomerByAccID(int accID) {
         try {
             String sql = "SELECT * FROM Customer WHERE Aid = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(sql);
             statement.setInt(1, accID);
-            ResultSet rs = statement.executeQuery();
+            rs = statement.executeQuery();
             while (rs.next()) {                
                 Customer c = new Customer();
                 c.setCusID(rs.getInt(1));

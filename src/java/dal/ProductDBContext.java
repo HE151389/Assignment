@@ -1,7 +1,5 @@
 package dal;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -16,8 +14,8 @@ public class ProductDBContext extends DBContext {
         try {
             String sql = "SELECT p.*,c.name FROM Product p INNER JOIN Category c \n"
                     + "ON p.categoryID = c.categoryID";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            ResultSet rs = statement.executeQuery();
+            statement = connection.prepareStatement(sql);
+            rs = statement.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
                 p.setID(rs.getInt(1));
@@ -39,16 +37,16 @@ public class ProductDBContext extends DBContext {
         }
         return listProduct;
     }
-    
+
     public ArrayList<Product> getProductsByCategoryID(String categoryID) {
         ArrayList<Product> listProduct = new ArrayList<>();
         try {
             String sql = "SELECT p.*,c.name FROM Product p INNER JOIN Category c \n"
                     + "ON p.categoryID = c.categoryID \n"
                     + "WHERE p.categoryID = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(sql);
             statement.setString(1, categoryID);
-            ResultSet rs = statement.executeQuery();
+            rs = statement.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
                 p.setID(rs.getInt(1));
@@ -70,16 +68,16 @@ public class ProductDBContext extends DBContext {
         }
         return listProduct;
     }
-    
+
     public ArrayList<Product> getSearchProducts(String searchString) {
         ArrayList<Product> listProduct = new ArrayList<>();
         try {
             String sql = "SELECT p.*,c.name FROM Product p INNER JOIN Category c \n"
                     + "ON p.categoryID = c.categoryID \n"
                     + "WHERE p.name LIKE ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, "%"+searchString+"%");
-            ResultSet rs = statement.executeQuery();
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, "%" + searchString + "%");
+            rs = statement.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
                 p.setID(rs.getInt(1));
@@ -101,15 +99,15 @@ public class ProductDBContext extends DBContext {
         }
         return listProduct;
     }
-    
+
     public Product getProduct(int pid) {
         try {
             String sql = "SELECT p.*,c.name FROM Product p INNER JOIN Category c \n"
                     + "ON p.categoryID = c.categoryID \n"
                     + "WHERE Pid = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(sql);
             statement.setInt(1, pid);
-            ResultSet rs = statement.executeQuery();
+            rs = statement.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
                 p.setID(rs.getInt(1));
@@ -131,16 +129,65 @@ public class ProductDBContext extends DBContext {
         }
         return null;
     }
-    
-    public void insertProducts(){
-        
+
+    public void insertProducts(Product p) {
+        try {
+            String sql = "INSERT INTO [Product]([Name],[Quantity],[Price],[From],[Image1],[Image2],[CategoryID],[Description])\n"
+                    + "     VALUES (?,?,?,?,?,?,?,?)";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, p.getName());
+            statement.setInt(2, p.getQuantity());
+            statement.setDouble(3, p.getPrice());
+            statement.setString(4, p.getFrom());
+            statement.setString(5, p.getUrlImg1());
+            statement.setString(6, p.getUrlImg2());
+            statement.setString(7, p.getCategory().getCategoryID());
+            statement.setString(8, p.getDes());
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void updateProducts(Product p) {
+        try {
+            String sql = "UPDATE [Product]\n"
+                    + "   SET [Name] = ?,[Quantity] = ?,[Price] = ?,[From] = ?,[Image1] = ?\n"
+                    + "      ,[Image2] = ?,[CategoryID] = ?,[Description] = ?\n"
+                    + " WHERE Pid = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, p.getName());
+            statement.setInt(2, p.getQuantity());
+            statement.setDouble(3, p.getPrice());
+            statement.setString(4, p.getFrom());
+            statement.setString(5, p.getUrlImg1());
+            statement.setString(6, p.getUrlImg2());
+            statement.setString(7, p.getCategory().getCategoryID());
+            statement.setString(8, p.getDes());
+            statement.setInt(9, p.getID());
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void deleteProducts(int pID) {
+        try {
+            String sql = "DELETE FROM Product WHERE Pid = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, pID);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public static void main(String[] args) {
         dal.ProductDBContext pdbc = new ProductDBContext();
-        ArrayList<Product> listProducts = pdbc.getSearchProducts("h");
-        for (Product p : listProducts) {
+        pdbc.updateProducts(new Product(7, "Chair7", 10, 50, "MSI", "", "", new Category("C", "chair"), "C01"));
+        Product p = pdbc.getProduct(7);
+//        for (Product p : listProducts) {
             System.out.println(p.getName());
-        }
+//        }
     }
 }
