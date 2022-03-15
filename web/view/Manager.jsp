@@ -152,8 +152,31 @@
                             </c:forEach>
                         </tbody>
                     </table>
+                    <ul class = "a pagination text-center" style="margin:30px 50px 0px 0px">
+                        <style>
+                            .a li{
+                                background-color: #f5f5f5;
+                                margin: 0px 2px;
+                                padding: 2px;
+                            }
+                        </style>
+                        <c:if test="${requestScope.pageI > 2}">
+                            <li><a href="?page=1">First </a></li>
+                            </c:if>
+                            <c:if test="${requestScope.pageI > 1}">
+                            <li><a href="?page=${requestScope.pageI-1}">${requestScope.pageI-1} </a></li>
+                            </c:if>
+                        <li><a style="color: red">${requestScope.pageI}</a></li>
+                            <c:if test="${requestScope.pageI < requestScope.totalPage}">
+                            <li><a href="?page=${requestScope.pageI+1}">${requestScope.pageI+1} </a></li>
+                            </c:if>
+                            <c:if test="${requestScope.pageI < requestScope.totalPage-1}">
+                            <li><a href="?page=${requestScope.totalPage}">Last </a></li>
+                            </c:if>
+                    </ul>
                 </div>
-            </div>        
+            </div>
+
         </div> 
         <!-- Modal Create -->
         <form action="createProduct" method="post">

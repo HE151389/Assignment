@@ -19,8 +19,19 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
         dal.ProductDBContext pdbc = new ProductDBContext();
         dal.CategoryDBContext adbc = new CategoryDBContext();
-        ArrayList<Product> listProducts = pdbc.getAllProducts();
+        int pageS = 8;
+        int pageI;
+        try {
+            pageI = Integer.parseInt(request.getParameter("page"));
+        } catch (NumberFormatException e) {
+            pageI = 1;
+        }
+        int totalProducts = pdbc.getTotal();
+        int totalPage = (totalProducts % pageS) == 0 ? totalProducts / pageS : (totalProducts / pageS) + 1;
+        ArrayList<Product> listProducts = pdbc.getAllProducts(pageI, pageS);
         ArrayList<Category> listCategorys = adbc.getCategorys();
+        request.setAttribute("pageI", pageI);
+        request.setAttribute("totalPage", totalPage);
         request.setAttribute("listProducts", listProducts);
         request.setAttribute("listCategorys", listCategorys);
         request.getRequestDispatcher("view/Home.jsp").forward(request, response);
@@ -29,7 +40,7 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     @Override

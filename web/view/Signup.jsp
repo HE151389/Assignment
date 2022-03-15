@@ -82,7 +82,6 @@
         </style>
     </head>
     <body>
-        <jsp:include page="Header.jsp"></jsp:include>
         <div class="signup-form">
             <form action="signup" method="post">
                 <h2>Sign Up</h2>

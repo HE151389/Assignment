@@ -1,5 +1,6 @@
 package dal;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -9,12 +10,19 @@ import model.Category;
 
 public class ProductDBContext extends DBContext {
 
-    public ArrayList<Product> getAllProducts() {
+    public ArrayList<Product> getAllProducts(int pageIndex, int pageSize) {
         ArrayList<Product> listProduct = new ArrayList<>();
         try {
-            String sql = "SELECT p.*,c.name FROM Product p INNER JOIN Category c \n"
-                    + "ON p.categoryID = c.categoryID";
+            String sql = "SELECT * FROM \n"
+                    + "(SELECT  p.*, c.Name as cName, ROW_NUMBER() OVER (ORDER BY pid ASC) AS ROWNUM\n"
+                    + "FROM Product p LEFT JOIN Category c\n"
+                    + "ON p.categoryID = c.categoryID)t\n"
+                    + "WHERE ROWNUM >= (? - 1)*? + 1 AND ROWNUM <= ? * ?";
             statement = connection.prepareStatement(sql);
+            statement.setInt(1, pageIndex);
+            statement.setInt(2, pageSize);
+            statement.setInt(3, pageIndex);
+            statement.setInt(4, pageSize);
             rs = statement.executeQuery();
             while (rs.next()) {
                 Product p = new Product();
@@ -181,13 +189,30 @@ public class ProductDBContext extends DBContext {
             Logger.getLogger(ProductDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public int getTotal(){
+        try {
+            String sql = "SELECT COUNT(*) AS Total FROM Product";
+            statement = connection.prepareStatement(sql);
+            rs = statement.executeQuery();
+            if(rs.next()){
+                return rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
+    }
 
     public static void main(String[] args) {
         dal.ProductDBContext pdbc = new ProductDBContext();
-        pdbc.updateProducts(new Product(7, "Chair7", 10, 50, "MSI", "", "", new Category("C", "chair"), "C01"));
-        Product p = pdbc.getProduct(7);
+//        pdbc.updateProducts(new Product(7, "Chair7", 10, 50, "MSI", "", "", new Category("C", "chair"), "C01"));
+        ArrayList<Product> listProducts = pdbc.getAllProducts(1, 8);
+//        Product p = pdbc.getProduct(7);
 //        for (Product p : listProducts) {
-            System.out.println(p.getName());
+//            System.out.println(p.getName());
 //        }
+        int a = pdbc.getTotal();
+        System.out.println(a);
     }
 }

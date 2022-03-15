@@ -24,27 +24,27 @@
 
     <body>
         <jsp:include page="../view/Header.jsp"></jsp:include>
-        <!-- product list -->
-        <div class="section">
-            <div class="listProduct">
-                <div class="section-header">
-                    <h2>List Product</h2>
-                </div>
-                <div class="row" id="discount-products">
+            <!-- product list -->
+            <div class="section">
+                <div class="listProduct">
+                    <div class="section-header">
+                        <h2>List Product</h2>
+                    </div>
+                    <div class="row" id="discount-products">
                     <c:forEach items="${requestScope.listProducts}" var="p">
                         <div class="col-3 col-md-6 col-sm-12">
                             <div class="product-card">
                                 <div class="product-card-img">
                                     <a href="productDetails?pid=${p.ID}">
-                                    <img src="${p.urlImg1}" alt="">
-                                    <img src="${p.urlImg2}" alt="">
+                                        <img src="${p.urlImg1}" alt="">
+                                        <img src="${p.urlImg2}" alt="">
                                     </a>
                                 </div>
                                 <div class="product-card-info">
                                     <div class="product-btn">
                                         <a href="cart"><button class="btn-flat btn-hover btn-shop-now">shop now</button></a>
                                         <a href="addToCart?pID=${p.ID}"><button class="btn-flat btn-hover btn-cart-add">
-                                            <i class='bx bxs-cart-add'></i>
+                                                <i class='bx bxs-cart-add'></i>
                                             </button></a>
                                         <button class="btn-flat btn-hover btn-cart-add">
                                             <i class='bx bxs-heart'></i>
@@ -62,6 +62,28 @@
                         </div>
                     </c:forEach>
                 </div>
+                <ul class = "a pagination text-center" style="margin-right: 50px">
+                    <style>
+                        .a li{
+                            background-color: #f5f5f5;
+                            margin: 0px 2px;
+                            padding: 2px;
+                        }
+                    </style>
+                    <c:if test="${requestScope.pageI > 2}">
+                        <li><a href="?page=1">First </a></li>
+                        </c:if>
+                        <c:if test="${requestScope.pageI > 1}">
+                        <li><a href="?page=${requestScope.pageI-1}">${requestScope.pageI-1} </a></li>
+                        </c:if>
+                    <li><a style="color: red">${requestScope.pageI}</a></li>
+                        <c:if test="${requestScope.pageI < requestScope.totalPage}">
+                        <li><a href="?page=${requestScope.pageI+1}">${requestScope.pageI+1} </a></li>
+                        </c:if>
+                        <c:if test="${requestScope.pageI < requestScope.totalPage-1}">
+                        <li><a href="?page=${requestScope.totalPage}">Last </a></li>
+                        </c:if>
+                </ul>
 
             </div>
         </div>

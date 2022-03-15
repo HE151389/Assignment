@@ -11,13 +11,24 @@ import javax.servlet.http.HttpServletResponse;
 import model.Category;
 import model.Product;
 
-public class ManagerServlet extends HttpServlet {
+public class ManagerServlet extends AuthenticationServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProductDBContext pdbc = new ProductDBContext();
-        ArrayList<Product> listProducts = pdbc.getAllProducts();
+        int pageS = 8;
+        int pageI;
+        try {
+            pageI = Integer.parseInt(request.getParameter("page"));
+        } catch (NumberFormatException e) {
+            pageI = 1;
+        }
+        int totalProducts = pdbc.getTotal();
+        int totalPage = (totalProducts % pageS) == 0 ? totalProducts / pageS : (totalProducts / pageS) + 1;
+        ArrayList<Product> listProducts = pdbc.getAllProducts(pageI, pageS);
+        request.setAttribute("pageI", pageI);
+        request.setAttribute("totalPage", totalPage);
         ArrayList<Category> listCategorys = new CategoryDBContext().getCategorys();
         request.setAttribute("listCategorys", listCategorys);
         request.setAttribute("listProducts", listProducts);
@@ -25,7 +36,7 @@ public class ManagerServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
     }

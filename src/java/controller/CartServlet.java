@@ -14,7 +14,6 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("listProducts", new ProductDBContext().getAllProducts());
         request.getRequestDispatcher("view/Cart.jsp").forward(request, response);
     }
 
