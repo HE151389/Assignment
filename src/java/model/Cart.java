@@ -34,5 +34,10 @@ public class Cart {
     public void setTotalMoney(double totalMoney) {
         this.totalMoney = totalMoney;
     }
+
+    @Override
+    public String toString() {
+        return "Cart{" + "cart=" + cart + ", totalMoney=" + totalMoney + '}';
+    }
     
 }

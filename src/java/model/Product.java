@@ -99,4 +99,10 @@ public class Product {
         this.des = des;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" + "ID=" + ID + ", name=" + name + ", quantity=" + quantity + ", price=" + price + ", category=" + category + '}';
+    }
+
+
 }

@@ -1,14 +1,13 @@
 package dal;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Account;
 
-public class AccountDBContext extends DBContext{
-    public Account getAccount(String userName, String password, boolean isAdmin){
+public class AccountDBContext extends DBContext {
+
+    public Account getAccount(String userName, String password, boolean isAdmin) {
         String sql = "SELECT * FROM Account WHERE userName = ? AND password = ? AND isAdmin = ?";
         try {
             statement = connection.prepareStatement(sql);
@@ -29,8 +28,8 @@ public class AccountDBContext extends DBContext{
         }
         return null;
     }
-    
-    public Account getAccountByUsername(String userName){
+
+    public Account getAccountByUsername(String userName) {
         String sql = "SELECT * FROM Account WHERE userName = ?";
         try {
             statement = connection.prepareStatement(sql);
@@ -49,8 +48,8 @@ public class AccountDBContext extends DBContext{
         }
         return null;
     }
-    
-    public void insertAccount(Account a){
+
+    public void insertAccount(Account a) {
         String sql = "INSERT INTO Account(username,password,isAdmin) VALUES(?,?,?)";
         try {
             statement = connection.prepareStatement(sql);
@@ -62,8 +61,8 @@ public class AccountDBContext extends DBContext{
             Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public Account getAccountByAid(int Aid){
+
+    public Account getAccountByAid(int Aid) {
         String sql = "SELECT * FROM Account WHERE Aid = ?";
         try {
             statement = connection.prepareStatement(sql);
@@ -82,7 +81,7 @@ public class AccountDBContext extends DBContext{
         }
         return null;
     }
-    
+
 //    public static void main(String[] args) {
 //        dal.AccountDBContext dabd = new AccountDBContext();
 //        Account a = new Account(1,"Admin01","Admin01");
@@ -93,4 +92,15 @@ public class AccountDBContext extends DBContext{
 ////        n
 //
 //    }
+    public void updateAccount(int id, String newP) {
+        String sql = "UPDATE [Account] SET [password] = ? WHERE Aid = ?";
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, newP);
+            statement.setInt(2, id);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

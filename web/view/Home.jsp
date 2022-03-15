@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="product-card-info">
                                     <div class="product-btn">
-                                        <a><button class="btn-flat btn-hover btn-shop-now">shop now</button></a>
+                                        <a href="cart"><button class="btn-flat btn-hover btn-shop-now">shop now</button></a>
                                         <a href="addToCart?pID=${p.ID}"><button class="btn-flat btn-hover btn-cart-add">
                                             <i class='bx bxs-cart-add'></i>
                                             </button></a>

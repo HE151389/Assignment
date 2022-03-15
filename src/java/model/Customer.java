@@ -66,5 +66,10 @@ public class Customer {
     public void setDoB(Date DoB) {
         this.DoB = DoB;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" + "name=" + name + ", DoB=" + DoB + ", email=" + email + '}';
+    }
     
 }
