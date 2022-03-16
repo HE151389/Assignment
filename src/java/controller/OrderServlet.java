@@ -36,6 +36,9 @@ public class OrderServlet extends HttpServlet {
         CustomerDBContext cdbc = new CustomerDBContext();
         OrderDetailsDBContext oddbc = new OrderDetailsDBContext();
         Customer c = cdbc.getCustomer(name, DoB, email);
+        if (c == null) {
+            c = new Customer(name, DoB, email, null);
+        }
         int oID = new OrderDBContext().insertOrder(c, total);
         Order o = new Order(oID, c, total);
         ArrayList<OrderDetails> listOrderDetails = new ArrayList<>(); 

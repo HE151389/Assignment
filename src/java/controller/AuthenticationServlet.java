@@ -11,7 +11,7 @@ public abstract class AuthenticationServlet extends HttpServlet {
 
     private boolean isAuthenticated(HttpServletRequest request) {
         Account a = (Account) request.getSession().getAttribute("account");
-        return a.isIsAdmin();
+        return a!=null;
     }
 
     @Override
@@ -43,6 +43,6 @@ public abstract class AuthenticationServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }
