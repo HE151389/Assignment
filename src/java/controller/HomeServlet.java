@@ -3,7 +3,6 @@ package controller;
 import dal.CategoryDBContext;
 import dal.ProductDBContext;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,13 +16,13 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        dal.ProductDBContext pdbc = new ProductDBContext();
-        dal.CategoryDBContext adbc = new CategoryDBContext();
+        ProductDBContext pdbc = new ProductDBContext();
+        CategoryDBContext adbc = new CategoryDBContext();
         int pageS = 8;
         int pageI;
         try {
             pageI = Integer.parseInt(request.getParameter("page"));
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             pageI = 1;
         }
         int totalProducts = pdbc.getTotal();

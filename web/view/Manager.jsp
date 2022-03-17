@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Product Management</title>
-        <link href="css/manager.css" rel="stylesheet" type="text/css"/> 
+        <link href="../css/manager.css" rel="stylesheet" type="text/css"/> 
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -36,7 +36,7 @@
         </script>
     </head>
     <body>
-        <jsp:include page="Header.jsp"></jsp:include>
+        
             <div class="container-xl">
                 <div class="table-responsive">
                     <div class="table-wrapper">			
@@ -44,7 +44,7 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="show-entries">
-                                        <button type="button" class="btn btn-link"><a href="home">Back</a></button>
+                                        <button type="button" class="btn btn-link"><a href="../home">Back</a></button>
                                     </div>						
                                 </div>
                                 <div class="col-sm-4">
@@ -238,7 +238,7 @@
                 </div>
             </div>
         </form>
-        <jsp:include page="Footer.jsp"></jsp:include>
+        
     </body>
     <script>
         function doDelete(id) {

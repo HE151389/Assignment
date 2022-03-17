@@ -48,7 +48,7 @@
                                 </li>
                                 <!-- end mega menu -->
                                 <c:if test="${sessionScope.account.isAdmin}">
-                                    <li><a href="manager">Manager Product</a></li>
+                                    <li><a href="admin/manager">Manager Product</a></li>
                                     </c:if>
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">contact</a></li>

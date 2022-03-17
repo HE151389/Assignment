@@ -34,7 +34,7 @@ public class ManagerServlet extends AuthenticationServlet {
             ArrayList<Category> listCategorys = new CategoryDBContext().getCategorys();
             request.setAttribute("listCategorys", listCategorys);
             request.setAttribute("listProducts", listProducts);
-            request.getRequestDispatcher("view/Manager.jsp").forward(request, response);
+            request.getRequestDispatcher("../view/Manager.jsp").forward(request, response);
         }else{
             response.getWriter().print("<h1>Access Denied!</h1>");
         }
