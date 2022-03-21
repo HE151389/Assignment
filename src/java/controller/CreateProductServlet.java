@@ -23,6 +23,7 @@ public class CreateProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
+        int page = Integer.parseInt(request.getParameter("page"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         double price = Double.parseDouble(request.getParameter("price"));
         String from = request.getParameter("from");
@@ -33,7 +34,7 @@ public class CreateProductServlet extends HttpServlet {
         Category cate = new CategoryDBContext().getCategory(cateID);
         Product p = new Product(quantity, name, quantity, price, from, image1, image2, cate, des);
         new ProductDBContext().insertProducts(p);
-        response.sendRedirect("manager");
+        response.sendRedirect("manager?page="+page);
     }
 
     @Override

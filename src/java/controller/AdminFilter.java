@@ -23,8 +23,12 @@ public class AdminFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         Account a = (Account) req.getSession().getAttribute("account");
-        if (a.isIsAdmin()){
-            chain.doFilter(request, response);
+        if (a != null) {
+            if (a.isIsAdmin()) {
+                chain.doFilter(request, response);
+            } else {
+                res.sendRedirect("../login");
+            }
         } else {
             res.sendRedirect("../login");
         }

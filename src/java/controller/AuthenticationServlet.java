@@ -28,7 +28,7 @@ public abstract class AuthenticationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         if (isAuthenticated(request)) {
-
+            processPost(request, response);
         } else {
             response.sendRedirect("login");
         }

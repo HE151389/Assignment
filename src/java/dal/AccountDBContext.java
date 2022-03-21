@@ -82,16 +82,6 @@ public class AccountDBContext extends DBContext {
         return null;
     }
 
-//    public static void main(String[] args) {
-//        dal.AccountDBContext dabd = new AccountDBContext();
-//        Account a = new Account(1,"Admin01","Admin01");
-//        dabd.insertAccount(a);
-//        Account n = dabd.getAccount("Admin01","Admin01");
-////        for (Account a : lDAs) {
-//            System.out.println(n.getUserName());
-////        n
-//
-//    }
     public void updateAccount(int id, String newP) {
         String sql = "UPDATE [Account] SET [password] = ? WHERE Aid = ?";
         try {
@@ -102,5 +92,9 @@ public class AccountDBContext extends DBContext {
         } catch (SQLException ex) {
             Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    public static void main(String[] args) {
+        Account a = new AccountDBContext().getAccount("user01", "user01", false);
+        System.out.println(a);
     }
 }

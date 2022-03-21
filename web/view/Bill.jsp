@@ -8,14 +8,14 @@
     }
 </style>
 <jsp:include page="Header.jsp"></jsp:include>
-<div class="container mt-5">
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-8">
-            <div class="p-3 bg-white rounded">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1 class="text-uppercase">Invoice</h1>
-                        <div class="billed"><span class="font-weight-bold text-uppercase">Billed:</span><span class="ml-1">${requestScope.order.cus.name}</span></div>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-8">
+                <div class="p-3 bg-white rounded">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 class="text-uppercase">Invoice</h1>
+                            <div class="billed"><span class="font-weight-bold text-uppercase">Billed:</span><span class="ml-1">${requestScope.order.cus.name}</span></div>
                         <div class="billed"><span class="font-weight-bold text-uppercase">Date:</span><span class="ml-1">May 13, 2020</span></div>
                         <div class="billed"><span class="font-weight-bold text-uppercase">Order ID:</span><span class="ml-1">${requestScope.order.id}</span></div>
                     </div>
@@ -36,24 +36,26 @@
                             </thead>
                             <tbody>
                                 <c:forEach items="${requestScope.order.hashtable.get(order.id)}" var="od">
-                                <tr>
-                                    <td>${od.product.name}</td>
-                                    <td>${od.quantity}</td>
-                                    <td>${od.product.price}</td>
-                                    <td>${od.price}</td>
-                                </tr>
+                                    <tr>
+                                        <td>${od.product.name}</td>
+                                        <td>${od.quantity}</td>
+                                        <td>${od.product.price}</td>
+                                        <td>${od.price}</td>
+                                    </tr>
+                                </c:forEach>
                                 <tr>
                                     <td></td>
                                     <td></td>
                                     <td>Total</td>
-                                    <td>940</td>
+                                    <td>${requestScope.order.totalMoney}</td>
                                 </tr>
-                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <div class="text-right mb-3"><button class="btn btn-danger btn-sm mr-5" type="button">Pay Now</button></div>
+                <div class="text-right mb-3">
+                    <a href="home"><button button class="btn btn-danger btn-sm mr-5" >Continue shopping</button></a>
+                </div>  
             </div>
         </div>
     </div>

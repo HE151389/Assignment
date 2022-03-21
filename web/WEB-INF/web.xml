@@ -122,7 +122,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UpdateProductServlet</servlet-name>
-        <url-pattern>/updateProduct</url-pattern>
+        <url-pattern>/admin/updateProduct</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddToCartServlet</servlet-name>
@@ -138,11 +138,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreateProductServlet</servlet-name>
-        <url-pattern>/createProduct</url-pattern>
+        <url-pattern>/admin/createProduct</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteProductServlet</servlet-name>
-        <url-pattern>/deleteProduct</url-pattern>
+        <url-pattern>/admin/deleteProduct</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OrderServlet</servlet-name>

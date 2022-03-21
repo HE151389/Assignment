@@ -14,8 +14,9 @@ public class DeleteProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int pID = Integer.parseInt(request.getParameter("pID"));
+        int page = Integer.parseInt(request.getParameter("page"));
         new ProductDBContext().deleteProducts(pID);
-        response.sendRedirect("manager");
+        response.sendRedirect("manager?page="+page);
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

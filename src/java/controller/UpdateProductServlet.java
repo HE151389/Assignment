@@ -16,6 +16,7 @@ public class UpdateProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int pID = Integer.parseInt(request.getParameter("pID"));
+        int page = Integer.parseInt(request.getParameter("page"));
         String name = request.getParameter("name");
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         double price = Double.parseDouble(request.getParameter("price"));
@@ -27,13 +28,14 @@ public class UpdateProductServlet extends HttpServlet {
         Category cate = new CategoryDBContext().getCategory(cateID);
         Product p = new Product(pID, name, quantity, price, from, image1, image2, cate, des);
         new ProductDBContext().updateProducts(p);
-        response.sendRedirect("manager");
+        response.sendRedirect("manager?page="+page);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int pID = Integer.parseInt(request.getParameter("pID"));
+        int page = Integer.parseInt(request.getParameter("page"));
         String name = request.getParameter("name");
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         double price = Double.parseDouble(request.getParameter("price"));
@@ -45,7 +47,7 @@ public class UpdateProductServlet extends HttpServlet {
         Category cate = new CategoryDBContext().getCategory(cateID);
         Product p = new Product(pID, name, quantity, price, from, image1, image2, cate, des);
         new ProductDBContext().updateProducts(p);
-        response.sendRedirect("manager");
+        response.sendRedirect("manager?page="+page);
     }
 
     @Override

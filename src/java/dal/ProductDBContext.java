@@ -211,6 +211,7 @@ public class ProductDBContext extends DBContext {
 //        for (Product p : listProducts) {
 //            System.out.println(p.getName());
 //        }
+pdbc.deleteProducts(40);
         int a = pdbc.getTotal();
         System.out.println(a);
     }

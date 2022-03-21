@@ -3,20 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controller/ManagerServlet.java</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controller/CategoryServlet.java</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/Signup.jsp</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controller/HomeServlet.java</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/model/Customer.java</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/Home.jsp</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/dal/OrderDBContext.java</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/dal/CartDBContext.java</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/dal/AccountDBContext.java</file>
             <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controller/CartServlet.java</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controller/OrderServlet.java</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/view/Manager.jsp</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/web/js/page.js</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/model/Account.java</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/dal/ProductDBContext.java</file>
-            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controller/AuthenticationServlet.java</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/controller/AddToCartServlet.java</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/model/CartDetail.java</file>
+            <file>file:/C:/Users/nam25/Documents/NetBeansProjects/Assignment/src/java/model/Cart.java</file>
         </group>
     </open-files>
 </project-private>

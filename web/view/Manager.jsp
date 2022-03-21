@@ -87,8 +87,8 @@
                                     <td>${p.from}</td>
                                     <td>
                                         <a data-toggle="modal" data-target="#updateModal${p.ID}" class="edit" title="Update" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                        <a onclick="doDelete(${p.ID})" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                        <form action="updateProduct?pID=${p.ID}" method="post">
+                                        <a onclick="doDelete(${p.ID}, ${requestScope.pageI});" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                        <form action="updateProduct?page=${requestScope.pageI}&pID=${p.ID}" method="post">
                                             <div class="modal fade" id="updateModal${p.ID}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
@@ -179,7 +179,7 @@
 
         </div> 
         <!-- Modal Create -->
-        <form action="createProduct" method="post">
+        <form action="createProduct?page=${requestScope.totalPage}" method="post">
             <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -209,11 +209,11 @@
                                 </tr>
                                 <tr>
                                     <td>Image:</td>
-                                    <td><input name="image1" type="file" required/></td>
+                                    <td><input name="image1" type="file"/></td>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td><input name="image2" type="file" required/></td>
+                                    <td><input name="image2" type="file"/></td>
                                 </tr>
                                 <tr>
                                     <td>Category:</td>
@@ -241,10 +241,10 @@
         
     </body>
     <script>
-        function doDelete(id) {
-            var c = confirm("Do you want to delete student?");
+        function doDelete(id, totalPage) {
+            var c = confirm("Do you want to delete product?");
             if (c) {
-                window.location.href = "deleteProduct?pID=" + id;
+                window.location.href = "deleteProduct?page="+totalPage+"&pID=" + id;
             }
         }
     </script>
