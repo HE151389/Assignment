@@ -1,19 +1,20 @@
 package model;
 
 public class CartDetail {
+
     private Cart cart;
     private Product product;
     private int quantity;
-    private double price;
+    private double subTotal;
 
     public CartDetail() {
     }
 
-    public CartDetail(Cart cart, Product product, int quantity, double price) {
+    public CartDetail(Cart cart, Product product, int quantity) {
         this.cart = cart;
         this.product = product;
         this.quantity = quantity;
-        this.price = price;
+        this.subTotal = product.getPrice() * quantity;
     }
 
     public Cart getCart() {
@@ -40,13 +41,18 @@ public class CartDetail {
         this.quantity = quantity;
     }
 
-    public double getPrice() {
-        return price;
+    public double getSubTotal() {
+        subTotal = product.getPrice() * quantity;
+        return subTotal;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
     }
-    
+
+    @Override
+    public String toString() {
+        return "CartDetail{" + "cart=" + cart + ", product=" + product + ", quantity=" + quantity + ", subTotal=" + subTotal + '}';
+    }
 
 }

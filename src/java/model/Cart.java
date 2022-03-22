@@ -1,7 +1,7 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Map;
 
 public class Cart {
 
@@ -44,6 +44,11 @@ public class Cart {
     }
 
     public double getTotalMoney() {
+        totalMoney = 0;
+        for (Map.Entry<Integer, CartDetail> entry : hashtableCart.entrySet()) {
+            CartDetail value = entry.getValue();
+            totalMoney += value.getSubTotal();
+        }
         return totalMoney;
     }
 

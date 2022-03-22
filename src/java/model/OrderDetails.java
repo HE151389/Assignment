@@ -1,10 +1,11 @@
 package model;
 
 public class OrderDetails {
+
     private Order order;
     private Product product;
     private int quantity;
-    private double price;
+    private double subTotal;
 
     public OrderDetails() {
     }
@@ -13,14 +14,14 @@ public class OrderDetails {
         this.order = order;
         this.product = product;
         this.quantity = quantity;
-        this.price = (double) quantity*product.getPrice();
+        this.subTotal = (double) quantity * product.getPrice();
     }
 
-    public OrderDetails(Order order, Product product, int quantity, double price) {
+    public OrderDetails(Order order, Product product, int quantity, double subTotal) {
         this.order = order;
         this.product = product;
         this.quantity = quantity;
-        this.price = price;
+        this.subTotal = subTotal;
     }
 
     public Order getOrder() {
@@ -47,17 +48,17 @@ public class OrderDetails {
         this.quantity = quantity;
     }
 
-    public double getPrice() {
-        return price;
+    public double getSubTotal() {
+        return subTotal;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
     }
 
     @Override
     public String toString() {
-        return "OrderDetails{" + "order=" + order + ", product=" + product + ", quantity=" + quantity + ", price=" + price + '}';
+        return "OrderDetails{" + "order=" + order + ", product=" + product + ", quantity=" + quantity + ", subTotal=" + subTotal + '}';
     }
-    
+
 }

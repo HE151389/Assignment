@@ -40,7 +40,7 @@
                                         <td>${od.product.name}</td>
                                         <td>${od.quantity}</td>
                                         <td>${od.product.price}</td>
-                                        <td>${od.price}</td>
+                                        <td>${od.subTotal}</td>
                                     </tr>
                                 </c:forEach>
                                 <tr>

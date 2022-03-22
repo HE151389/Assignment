@@ -178,6 +178,20 @@ public class ProductDBContext extends DBContext {
         }
     }
 
+    public void updateProducts(int quantity, int pID) {
+        try {
+            String sql = "UPDATE [Product]\n"
+                    + "   SET [Quantity] = ?\n"
+                    + " WHERE Pid = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, quantity);
+            statement.setInt(2, pID);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public void deleteProducts(int pID) {
         try {
             String sql = "DELETE FROM Product WHERE Pid = ?";
@@ -188,13 +202,13 @@ public class ProductDBContext extends DBContext {
             Logger.getLogger(ProductDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public int getTotal(){
+
+    public int getTotal() {
         try {
             String sql = "SELECT COUNT(*) AS Total FROM Product";
             statement = connection.prepareStatement(sql);
             rs = statement.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 return rs.getInt(1);
             }
         } catch (SQLException ex) {
@@ -211,7 +225,7 @@ public class ProductDBContext extends DBContext {
 //        for (Product p : listProducts) {
 //            System.out.println(p.getName());
 //        }
-pdbc.deleteProducts(40);
+        pdbc.deleteProducts(40);
         int a = pdbc.getTotal();
         System.out.println(a);
     }

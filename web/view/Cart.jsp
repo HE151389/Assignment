@@ -39,16 +39,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${sessionScope.cart.getCart()}" var="c">
+                        <c:forEach items="${sessionScope.cart.hashtableCart}" var="c">
                             <tr>
                                 <!--<td><input type="checkbox" name="choose"/></td>-->
-                                <td><img style="max-width: 50px;" src="${c.value.urlImg1}" /> </td>
-                                <td>${c.value.name}</td>
-                                <td>${c.value.price}</td>
+                                <td><img style="max-width: 50px;" src="${c.value.product.urlImg1}" /> </td>
+                                <td>${c.value.product.name}</td>
+                                <td>${c.value.product.price}</td>
                                 <td class="text-center" style="max-width: 40px; ">
-                                    <input style="max-width: 40px;" name="quantity" id="quantity${c.key}" class="text-center" type="number" min="1" max="" value="${c.value.quantity}" onchange="doChange(${c.key})"/>
+                                    <input style="max-width: 40px;" name="quantity" id="quantity${c.key}" class="text-center" type="number" min="1" max="${c.value.product.quantity}" value="${c.value.quantity <= c.value.product.quantity ? c.value.quantity:c.value.product.quantity}" onchange="doChange(${c.key})"/>
                                 </td>
-                                <td class="text-right">${c.value.price * c.value.quantity}</td>
+                                <td class="text-right">${c.value.subTotal}</td>
                                 <td class="text-right"><button onclick="doDelete(${c.key})" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                             </tr>
                         </c:forEach>    
@@ -70,9 +70,11 @@
                 <div class="col-sm-12  col-md-6">
                     <a class="btn btn-block btn-light" href="home"><button class="btn btn-block btn-light">Continue Shopping</button></a>
                 </div>
-                <div class="col-sm-12 col-md-6 text-right">
-                    <button data-toggle="modal" data-target="#exampleModal" class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
-                </div>
+                <c:if test="${sessionScope.cart != null}" >
+                    <div class="col-sm-12 col-md-6 text-right">
+                        <button data-toggle="modal" data-target="#exampleModal" class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                    </div>
+                </c:if>
                 <form action="order" method="post">
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -124,7 +126,7 @@
         }
     }
     function doChange(id) {
-        var q = +document.getElementById("quantity"+id).value;
+        var q = +document.getElementById("quantity" + id).value;
         window.location.href = "changeCart?id=" + id + "&quantity=" + q;
     }
 </script>
