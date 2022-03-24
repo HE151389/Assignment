@@ -22,13 +22,13 @@ import model.OrderDetails;
 import model.Product;
 
 public class OrderServlet extends HttpServlet {
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -51,24 +51,23 @@ public class OrderServlet extends HttpServlet {
         }
         int oID = new OrderDBContext().insertOrder(c, total);
         Order o = new Order(oID, c, total);
-        ArrayList<OrderDetails> listOrderDetails = new ArrayList<>();
         for (Map.Entry<Integer, CartDetail> entry : cart.getHashtableCart().entrySet()) {
             CartDetail value = entry.getValue();
+            int key = entry.getKey();
             int quantity = value.getQuantity();
             OrderDetails od = new OrderDetails(o, value.getProduct(), quantity);
-            listOrderDetails.add(od);
-            oddbc.insertOrderdetais(o, value.getProduct(),quantity);
+            o.getHashtable().put(key, od);
+            oddbc.insertOrderdetais(o, value.getProduct(), quantity);
             Product p = new ProductDBContext().getProduct(value.getProduct().getID());
             p.setQuantity(p.getQuantity() - quantity);
             new ProductDBContext().updateProducts(p);
         }
-        o.getHashtable().put(oID, listOrderDetails);
 
         request.setAttribute("order", o);
         request.getRequestDispatcher("view/Bill.jsp").forward(request, response);
-        
+
     }
-    
+
     @Override
     public String getServletInfo() {
         return "Short description";

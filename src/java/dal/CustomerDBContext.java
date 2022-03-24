@@ -79,6 +79,26 @@ public class CustomerDBContext extends DBContext {
             Logger.getLogger(CustomerDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public Customer getCustomerByCusID(int cID) {
+        try {
+            String sql = "SELECT * FROM Customer WHERE cusID = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, cID);
+            rs = statement.executeQuery();
+            while (rs.next()) {
+                Customer c = new Customer();
+                c.setCusID(cID);
+                c.setName(rs.getString(2));
+                c.setEmail(rs.getString(3));
+                c.setDoB(rs.getDate(4));
+                return c;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
     public static void main(String[] args) {
         dal.CustomerDBContext cdbc = new dal.CustomerDBContext();

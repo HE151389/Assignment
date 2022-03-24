@@ -6,8 +6,9 @@ import java.util.Hashtable;
 public class Order {
     private int id;
     private Customer cus;
-    private Hashtable<Integer,ArrayList<OrderDetails>> hashtable = new Hashtable<>();
+    private Hashtable<Integer,OrderDetails> hashtable = new Hashtable<>();
     private double totalMoney;
+    private String status;
 
     public Order() {
     }
@@ -17,6 +18,15 @@ public class Order {
         this.cus = cus;
         this.totalMoney = totalMoney;
     }
+
+    public Order(int id, Customer cus, double totalMoney, String status) {
+        this.id = id;
+        this.cus = cus;
+        this.totalMoney = totalMoney;
+        this.status = status;
+    }
+    
+    
 
     public int getId() {
         return id;
@@ -34,11 +44,11 @@ public class Order {
         this.cus = cus;
     }
 
-    public Hashtable<Integer, ArrayList<OrderDetails>> getHashtable() {
+    public Hashtable<Integer, OrderDetails> getHashtable() {
         return hashtable;
     }
 
-    public void setHashtable(Hashtable<Integer, ArrayList<OrderDetails>> hashtable) {
+    public void setHashtable(Hashtable<Integer, OrderDetails> hashtable) {
         this.hashtable = hashtable;
     }
 
@@ -48,6 +58,14 @@ public class Order {
 
     public void setTotalMoney(double totalMoney) {
         this.totalMoney = totalMoney;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override

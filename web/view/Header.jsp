@@ -32,23 +32,26 @@
                             <ul class="main-menu">
                                 <li><a href="home">home</a></li>
                                 <!-- mega menu -->
-                                <li class="mega-dropdown">
-                                    <a>Shop<i class='bx bxs-chevron-down'></i></a>
-                                    <div class="mega-content">
-                                        <div class="row">
-                                            <c:forEach items="${requestScope.listCategorys}" var="c">
-                                                <div class="col-3 col-md-12">
-                                                    <div class="box">
-                                                        <h3><a href="category?categoryID=${c.categoryID}">${c.name}</a></h3>
+                                <c:if test="${!sessionScope.account.isAdmin}">
+                                    <li class="mega-dropdown">
+                                        <a>Shop<i class='bx bxs-chevron-down'></i></a>
+                                        <div class="mega-content">
+                                            <div class="row">
+                                                <c:forEach items="${requestScope.listCategorys}" var="c">
+                                                    <div class="col-3 col-md-12">
+                                                        <div class="box">
+                                                            <h3><a href="category?categoryID=${c.categoryID}">${c.name}</a></h3>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </c:forEach>
+                                                </c:forEach>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                </c:if>
                                 <!-- end mega menu -->
                                 <c:if test="${sessionScope.account.isAdmin}">
                                     <li><a href="admin/manager">Manager Product</a></li>
+                                    <li><a href="admin/orderManager">Manager Order</a></li>
                                     </c:if>
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">contact</a></li>
